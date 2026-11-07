@@ -69,7 +69,8 @@ local timer = 0
 local degradation_interval = 60
 
 minetest.register_globalstep(function(dtime)
-	if minetest.settings:get_bool("creative_mode", false) then
+	-- Use the engine API so world-level and per-player creative mode are respected.
+	if minetest.is_creative_enabled("") then
 		timer = 0
 		return
 	end
