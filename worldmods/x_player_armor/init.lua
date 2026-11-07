@@ -1,0 +1,50 @@
+-- X Player Armor (x_player_armor)
+-- High-performance modular player armor and shield system for Luanti
+-- Author: SaKeL
+-- License: LGPL-2.1+ / CC-BY-4.0 / CC0 1.0
+
+local modname = core.get_current_modname()
+local modpath = core.get_modpath(modname)
+
+-- Enforce minimum Luanti engine version
+if not core.features or not core.register_detached_inventory_raw and not core.create_detached_inventory then
+	core.log("error", "[" .. modname .. "] Luanti 5.10.0 or higher is required.")
+	return
+end
+
+-- Early modpath virtualization (allows 3rd-party mods to detect 3d_armor/shields immediately)
+dofile(modpath .. "/modules/compat/engine.lua")
+
+-- Initialize public API table
+dofile(modpath .. "/api.lua")
+
+-- Load modular subsystems in dependency order
+local modules = {
+	"utils",
+	"constants",
+	"b3d_wiggler",
+	"visuals",
+	"vfx",
+	"inventory",
+	"effects",
+	"combat",
+	"items",
+	"crafting",
+	"skins",
+	"gltf_assembler",
+	"ui",
+	"stand",
+	"shield_hud",
+	"combat_hud",
+	"compat",
+}
+
+for i = 1, #modules do
+	local file = modpath .. "/modules/" .. modules[i] .. ".lua"
+	dofile(file)
+end
+
+-- Initialize visual self-healing watchdog
+core.register_on_mods_loaded(x_player_armor.visuals.register_watchdog)
+
+core.log("action", "[" .. modname .. "] v" .. x_player_armor.version .. " initialized successfully.")

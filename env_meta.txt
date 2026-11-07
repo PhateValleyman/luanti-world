@@ -1,0 +1,7 @@
+day_count = 3
+game_time = 3821
+lbm_introduction_times_version = 1
+lbm_introduction_times = farming:start_nodetimer_cotton~0;farming:start_nodetimer_wheat~0;doors:replace_doors_door_steel~0;xpanes:gen2~0;default:upgrade_chest_v2~0;doors:replace_doors_door_obsidian_glass~0;default:3dtorch~0;doors:replace_doors_door_wood~0;3d_armor_stand:update_inventories~0;default:convert_saplings_to_node_timer~0;default:upgrade_chest_locked_v2~0;doors:replace_xpanes_door_steel_bar~0;doors:replace_doors_door_glass~0;pipeworks:give_back_old_filter_items~3678;moreblocks:reduce_wood_tile_redundancy~3678;techage:streetlamp_offtransition~3678;ta4_addons:repair_matrix_screen_numbers~3678;techage:industriallamp2_offtransition~3678;techage:magnets~3678;techage:simplelamp_offtransition~3678;technic_chests:fix_wooden_chests~3678;moreblocks:fix_split_stone_tile_alt_name_collision~3678;techage:streetlamp2_offtransition~3678;ta4_addons:repair_matrix_screen_timer~3678;pipeworks:vacuum_tube_start~3678;technic_chests:upgrade_formspec~3678;techage:industriallamp4_offtransition~3678;techage:ta4_solar_invertertransition~3678;signs_bot:boxtransition~3678;pipeworks:fs_update_v2~3678;techage:industriallamp3_offtransition~3678;techage:industriallamp1_offtransition~3678;techage:growlight_offtransition~3678;techage:ceilinglamp_offtransition~3678;techage:ta3_autocrafter_pastransition~3678;nether:start_portal_timer~3678;
+last_clear_objects_time = 0
+time_of_day = 10603
+EnvArgsEnd

@@ -1,0 +1,3 @@
+liquid_physics_enable_water_physics (Enable Physics For Water) bool true
+liquid_physics_enable_lava_physics (Enable Physics For Lava) bool true
+liquid_physics_voxelibre_enable_scooping_via_use (VoxeLibre: Enable Scooping Via Use/Punch) bool true

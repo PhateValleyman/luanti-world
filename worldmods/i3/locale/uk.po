@@ -1,0 +1,556 @@
+# Ukrainian translations for i3.
+# This file is distributed under the same license as the i3 package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: i3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-21 14:16+0000\n"
+"PO-Revision-Date: 2026-08-21 14:16+0000\n"
+"Last-Translator: \n"
+"Language-Team: Ukrainian\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: src/api.lua
+msgid "Inventory"
+msgstr "Інвентар"
+
+#: src/api.lua
+msgid "Digging"
+msgstr "Копання"
+
+#: src/api.lua
+msgid "Digging (by chance)"
+msgstr "Копання (шанс)"
+
+#: src/api.lua
+msgid "Sort items by name (A-Z)"
+msgstr "Сортувати за назвою (A-Z)"
+
+#: src/api.lua
+msgid "Sort items by number of items per stack"
+msgstr "Сортувати за кількістю предметів у стаці"
+
+#: src/api.lua
+msgid "All"
+msgstr "Все"
+
+#: src/api.lua
+msgid "Nodes"
+msgstr "Блоки"
+
+#: src/api.lua
+msgid "Items"
+msgstr "Предмети"
+
+#: src/bags.lua
+msgid "There is already a bag"
+msgstr "Тут вже є сумка"
+
+#: src/bags.lua
+msgid "This is not a bag"
+msgstr "Це не сумка"
+
+#: src/bags.lua
+msgid "@1 (@2% full)"
+msgstr "@1 (@2% заповнено)"
+
+#: src/fields.lua
+msgid "Teleported to: @1"
+msgstr "Телепортовано до: @1"
+
+#: src/fields.lua
+msgid "Welcome back home!"
+msgstr "Ласкаво просимо додому!"
+
+#: src/fields.lua
+msgid "You already have set a waypoint at this position"
+msgstr "Ви вже маєте геомітку на цій локації"
+
+#: src/fields.lua
+msgid "Your Minetest client needs updating"
+msgstr "Ваш Luanti клієнт потрібно оновити!"
+
+#: src/groups.lua
+msgid "Any dye"
+msgstr "Будь-який барвник"
+
+#: src/groups.lua
+msgid "Any coal"
+msgstr "Будь-яке вугілля"
+
+#: src/groups.lua
+msgid "Any sand"
+msgstr "Будь-який пісок"
+
+#: src/groups.lua
+msgid "Any tree"
+msgstr "Будь-яке дерево"
+
+#: src/groups.lua
+msgid "Any wool"
+msgstr "Будь-яка шерсть"
+
+#: src/groups.lua
+msgid "Any glass"
+msgstr "Будь-яке скло"
+
+#: src/groups.lua
+msgid "Any stick"
+msgstr "Будь-які палички"
+
+#: src/groups.lua
+msgid "Any stone"
+msgstr "Будь-які каміння"
+
+#: src/groups.lua
+msgid "Any fence"
+msgstr "Будь-які паркани"
+
+#: src/groups.lua
+msgid "Any carpet"
+msgstr "Будь-які килими"
+
+#: src/groups.lua
+msgid "Any flower"
+msgstr "Будь-які квіти"
+
+#: src/groups.lua
+msgid "Any leaves"
+msgstr "Будь-яке листя"
+
+#: src/groups.lua
+msgid "Any vessel"
+msgstr "Будь-які полиці для посуду"
+
+#: src/groups.lua
+msgid "Any wood planks"
+msgstr "Будь-які дошки"
+
+#: src/groups.lua
+msgid "Any mushroom"
+msgstr "Будь-які гриби"
+
+#: src/groups.lua
+msgid "Any red flower"
+msgstr "Будь-які червоні квіти"
+
+#: src/groups.lua
+msgid "Any blue flower"
+msgstr "Будь-які сині квіти"
+
+#: src/groups.lua
+msgid "Any black flower"
+msgstr "Будь-які чорні квіти"
+
+#: src/groups.lua
+msgid "Any white flower"
+msgstr "Будь-які білі квіти"
+
+#: src/groups.lua
+msgid "Any green flower"
+msgstr "Будь-які зелені квіти"
+
+#: src/groups.lua
+msgid "Any orange flower"
+msgstr "Будь-які помаранчеві квіти"
+
+#: src/groups.lua
+msgid "Any yellow flower"
+msgstr "Будь-які жовті квіти"
+
+#: src/groups.lua
+msgid "Any violet flower"
+msgstr "Будь-які фіолетові квіти"
+
+#: src/groups.lua
+msgid "Any red dye"
+msgstr "Будь-які червоні барвники"
+
+#: src/groups.lua
+msgid "Any blue dye"
+msgstr "Будь-які сині барвники"
+
+#: src/groups.lua
+msgid "Any grey dye"
+msgstr "Будь-які сірі барвники"
+
+#: src/groups.lua
+msgid "Any pink dye"
+msgstr "Будь-які рожеві барвники"
+
+#: src/groups.lua
+msgid "Any cyan dye"
+msgstr "Будь-які блакитні барвники"
+
+#: src/groups.lua
+msgid "Any black dye"
+msgstr "Будь-які чорні барвники"
+
+#: src/groups.lua
+msgid "Any white dye"
+msgstr "Будь-які білі барвники"
+
+#: src/groups.lua
+msgid "Any brown dye"
+msgstr "Будь-які коричневі барвники"
+
+#: src/groups.lua
+msgid "Any green dye"
+msgstr "Будь-які зелені барвники"
+
+#: src/groups.lua
+msgid "Any orange dye"
+msgstr "Будь-які помаранчеві барвники"
+
+#: src/groups.lua
+msgid "Any yellow dye"
+msgstr "Будь-які жовті барвники"
+
+#: src/groups.lua
+msgid "Any violet dye"
+msgstr "Будь-які фіолетові барвники"
+
+#: src/groups.lua
+msgid "Any magenta dye"
+msgstr "Будь-які пурпурні барвники"
+
+#: src/groups.lua
+msgid "Any dark grey dye"
+msgstr "Будь-які сірі барвники"
+
+#: src/groups.lua
+msgid "Any dark green dye"
+msgstr "Будь-які зелені барвники"
+
+#: src/gui.lua
+msgid "Unknown Item (@1)"
+msgstr "Невідомий предмет (@1)"
+
+#: src/gui.lua
+msgid "Achievements: @1 of @2 (@3)"
+msgstr "Досягнення: @1 з @2 (@3)"
+
+#: src/gui.lua
+msgid "Secret award"
+msgstr "Секретне досягнення"
+
+#: src/gui.lua
+msgid "Unlock this award to find out what it is"
+msgstr "Розблокуйте це досягнення, щоб дізнатися його суть"
+
+#: src/gui.lua
+msgid "New waypoint:"
+msgstr "Нова геомітка:"
+
+#: src/gui.lua
+msgid "Add waypoint"
+msgstr "Додати геомітку"
+
+#: src/gui.lua
+msgid "[Click to teleport]"
+msgstr "[Натисніть для телепортування]"
+
+#: src/gui.lua
+msgid "Remove waypoint"
+msgstr "Прибрати геомітку"
+
+#: src/gui.lua
+msgid "Change color"
+msgstr "Змінити колір"
+
+#: src/gui.lua
+msgid "Preview the waypoint area"
+msgstr "Прев'ю геомітки"
+
+#: src/gui.lua
+msgid "Show waypoint"
+msgstr "Показати геомітку"
+
+#: src/gui.lua
+msgid "Hide waypoint"
+msgstr "Сховати геомітку"
+
+#: src/gui.lua
+msgid "Rename the bag"
+msgstr "Перейменувати сумку"
+
+#: src/gui.lua
+msgid "Helmet"
+msgstr "Шолом"
+
+#: src/gui.lua
+msgid "Chest"
+msgstr "Скриня"
+
+#: src/gui.lua
+msgid "Leggings"
+msgstr "Штани"
+
+#: src/gui.lua
+msgid "Boots"
+msgstr "Взуття"
+
+#: src/gui.lua
+msgid "Shield"
+msgstr "Щит"
+
+#: src/gui.lua
+msgid "Armor level"
+msgstr "Рівень броні"
+
+#: src/gui.lua
+msgid "Armor healing"
+msgstr "Зцілення броні"
+
+#: src/gui.lua
+msgid "Confirm trash?"
+msgstr "Очистити?"
+
+#: src/gui.lua
+msgid "Yes"
+msgstr "Так"
+
+#: src/gui.lua
+msgid "No"
+msgstr "Ні"
+
+#: src/gui.lua
+msgid "Home"
+msgstr "Дім"
+
+#: src/gui.lua
+msgid "Style"
+msgstr "Стиль"
+
+#: src/gui.lua
+msgid "Sorting"
+msgstr "Сорт."
+
+#: src/gui.lua
+msgid "No home set"
+msgstr "Немає точки дому"
+
+#: src/gui.lua
+msgid "Set home"
+msgstr "Задати"
+
+#: src/gui.lua
+msgid "Hide tabs"
+msgstr "Компактно"
+
+#: src/gui.lua
+msgid "Legacy inventory"
+msgstr "Класичний вид"
+
+#: src/gui.lua
+msgid "HUD description"
+msgstr "Опис на HUD"
+
+#: src/gui.lua
+msgid "Font size"
+msgstr "Розмір шрифту"
+
+#: src/gui.lua
+msgid "Enable this option to change the style of the right panel"
+msgstr "Мінімалістичний вигляд вкладок"
+
+#: src/gui.lua
+msgid "Enable this option to set the classic inventory size in Minetest"
+msgstr "Частково повертає класичний вид інвентарю"
+
+#: src/gui.lua
+msgid "Enable this option to show the wielded item description in your HUD"
+msgstr "Чи показувати назву предмета на HUD?"
+
+#: src/gui.lua
+msgid "Enable this option to collapse the inventory list by grouping some items"
+msgstr "Чи ховати подібні елементи в одній групі для зручности?"
+
+#: src/gui.lua
+msgid "Compression"
+msgstr "Компресія"
+
+#: src/gui.lua
+msgid "Reverse mode"
+msgstr "Реверс"
+
+#: src/gui.lua
+msgid "Ignore hotbar"
+msgstr "Без хотбару"
+
+#: src/gui.lua
+msgid "Automation"
+msgstr "Автоматизація"
+
+#: src/gui.lua
+msgid "Sorting method:"
+msgstr "Метод сортування:"
+
+#: src/gui.lua
+msgid "Enable this option to compress your inventory"
+msgstr "З'єднувати стаки предметів, щоб вони не займали зайве місце в інвентарі?"
+
+#: src/gui.lua
+msgid "Enable this option to sort your inventory in reverse order"
+msgstr "Сортувати ваш інвентар у зворотньому порядку?"
+
+#: src/gui.lua
+msgid "Enable this option to sort your inventory except the hotbar slots"
+msgstr "Уникати сортування на хотбарі?"
+
+#: src/gui.lua
+msgid "Enable this option to sort your inventory automatically"
+msgstr "Сортувати інвентар автоматично?"
+
+#: src/gui.lua
+msgid "Clear inventory"
+msgstr "Очистити інвентар"
+
+#: src/gui.lua
+msgid "Sort inventory"
+msgstr "Сортувати інвентар"
+
+#: src/gui.lua
+msgid "Settings"
+msgstr "Налаштування"
+
+#: src/gui.lua
+msgid "Go home"
+msgstr "Додому"
+
+#: src/gui.lua
+msgid "Any item belonging to the groups: @1"
+msgstr "Будь-який предмет, що належить до груп: @1"
+
+#: src/gui.lua
+msgid "Cooking time: @1"
+msgstr "Час плавлення: @1"
+
+#: src/gui.lua
+msgid "Burning time: @1"
+msgstr "Час спалювання: @1"
+
+#: src/gui.lua
+msgid "Replaced by @1 on smelting"
+msgstr "Замінено на @1 при виплавці"
+
+#: src/gui.lua
+msgid "Replaced by @1 on burning"
+msgstr "Замінено на @1 при спалюванні"
+
+#: src/gui.lua
+msgid "Replaced by @1 on crafting"
+msgstr "Замінено на @1 при крафті"
+
+#: src/gui.lua
+msgid "Repairable by step of @1"
+msgstr "Ремонтується кроком @1"
+
+#: src/gui.lua
+msgid "@1 of chance to drop"
+msgstr "@1 шанс дропнутися"
+
+#: src/gui.lua
+msgid "Only drop if using one of these tools: @1"
+msgstr "Дропається лише коли використовуються ці інструменти: @1"
+
+#: src/gui.lua
+msgid "Only drop if using this tool: @1"
+msgstr "Дропається лише коли використовується @1"
+
+#: src/gui.lua
+msgid "Shapeless"
+msgstr "Безформний"
+
+#: src/gui.lua
+msgid "Cooking"
+msgstr "Плавлення"
+
+#: src/gui.lua
+msgid "Custom recipe"
+msgstr "Кастомний рецепт"
+
+#: src/gui.lua
+msgid "Usage @1 of @2"
+msgstr "Використовується @1 з @2"
+
+#: src/gui.lua
+msgid "Recipe @1 of @2"
+msgstr "Рецепт @1 з @2"
+
+#: src/gui.lua
+msgid "Unbookmark this item"
+msgstr "Не улюблене"
+
+#: src/gui.lua
+msgid "Bookmark this item"
+msgstr "Улюблене"
+
+#: src/gui.lua
+msgid "Unable to bookmark this item, limit reached"
+msgstr "Ліміт списку улюблених предметів вичерпано"
+
+#: src/gui.lua
+msgid "Back to item list"
+msgstr "Повернутися до списку"
+
+#: src/gui.lua
+msgid "Quick Crafting"
+msgstr "Швидкий крафт"
+
+#: src/gui.lua
+msgid "Craft (×@1)"
+msgstr "Крафт (×@1)"
+
+#: src/gui.lua
+msgid "Missing materials for crafting"
+msgstr "Не вистачає матеріалів для крафту"
+
+#: src/gui.lua
+msgid "No recipes"
+msgstr "Немає рецептів"
+
+#: src/gui.lua
+msgid "No usages"
+msgstr "Немає використань"
+
+#: src/gui.lua
+msgid "Search"
+msgstr "Пошук"
+
+#: src/gui.lua
+msgid "Search..."
+msgstr "Пошук..."
+
+#: src/gui.lua
+msgid "Clear"
+msgstr "Очистити"
+
+#: src/gui.lua
+msgid "Go to page:"
+msgstr "Перейти:"
+
+#: src/gui.lua
+msgid "No item to show"
+msgstr "Немає результатів"
+
+#: src/gui.lua
+msgid "Collect items to reveal more recipes"
+msgstr "Збирайте предмети, щоб відкрити більше рецептів"
+
+#: src/gui.lua
+msgid "Click to hide"
+msgstr "Натисніть, щоб сховати"
+
+#: src/gui.lua
+msgid "Click to expand"
+msgstr "Натисніть, щоб розкрити"
+
+#: src/gui.lua
+msgid "Bookmarks"
+msgstr "Улюблене"

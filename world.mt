@@ -1,0 +1,9 @@
+enable_damage = false
+mod_storage_backend = sqlite3
+auth_backend = sqlite3
+player_backend = sqlite3
+backend = sqlite3
+gameid = minetest
+creative_mode = true
+world_name = default
+server_announce = true

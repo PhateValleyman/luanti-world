@@ -1,0 +1,183 @@
+local core = core or minetest
+local S = mod_menu.S
+
+mod_menu.FORMNAME = "mod_menu:main"
+mod_menu.ADMIN_FORMNAME = "mod_menu:admin"
+mod_menu.CONFIG_FORM_PREFIX = "mod_menu:config:"
+mod_menu.player_state = mod_menu.player_state or {}
+mod_menu.registered_settings = mod_menu.registered_settings or {}
+mod_menu.registered_icons = mod_menu.registered_icons or {}
+mod_menu.settings_form_status = mod_menu.settings_form_status or {}
+mod_menu.settings_form_state = mod_menu.settings_form_state or {}
+mod_menu.cached_mods = nil
+mod_menu.storage = mod_menu.storage or core.get_mod_storage()
+mod_menu.NO_IMAGE_TEXTURE = "mod_menu_no_image.png"
+mod_menu.CANCEL_DETAIL_EDIT_ON_CLOSE_KEY = "mod_menu.cancel_detail_edit_on_close"
+mod_menu.SHOW_MOD_PATHS_KEY = "mod_menu.show_mod_paths"
+mod_menu.SETTING_GATES_UI_ENABLED = false
+
+mod_menu.defaults = {
+	sort = "asc",
+	search = "",
+	show_libraries = false,
+}
+
+function mod_menu.get_state(player_name)
+	local state = mod_menu.player_state[player_name]
+	if not state then
+		state = {
+			sort = mod_menu.defaults.sort,
+			search = mod_menu.defaults.search,
+			show_libraries = mod_menu.defaults.show_libraries,
+			selected_id = nil,
+		}
+		mod_menu.player_state[player_name] = state
+	end
+
+	return state
+end
+
+function mod_menu.reset_cache()
+	mod_menu.cached_mods = nil
+end
+
+local function storage_key(name)
+	return "config_enabled:" .. name
+end
+
+local function setting_enabled_key(mod_id, setting_key)
+	return "setting_enabled:" .. tostring(mod_id or "") .. ":" .. tostring(setting_key or "")
+end
+
+local function detail_override_key(mod_id)
+	return "detail_override:" .. tostring(mod_id or "")
+end
+
+function mod_menu.get_storage_bool(key, default)
+	local value = mod_menu.storage:get_string(key)
+	if value == "" then
+		return default
+	end
+
+	return value == "true"
+end
+
+function mod_menu.set_storage_bool(key, value)
+	mod_menu.storage:set_string(key, value and "true" or "false")
+end
+
+function mod_menu.players_allowed()
+	return mod_menu.get_storage_bool("allow_players", true)
+end
+
+function mod_menu.set_players_allowed(value)
+	mod_menu.set_storage_bool("allow_players", value)
+end
+
+function mod_menu.can_admin(player_name)
+	return core.check_player_privs(player_name, { modmenu_admin = true })
+end
+
+function mod_menu.can_open(player_name)
+	return mod_menu.players_allowed() or mod_menu.can_admin(player_name)
+end
+
+function mod_menu.can_open_settings(player_name, mod_id)
+	if mod_id == mod_menu.modname and not mod_menu.can_admin(player_name) then
+		return false
+	end
+
+	return true
+end
+
+function mod_menu.is_config_enabled(mod_id)
+	return mod_menu.get_storage_bool(storage_key(mod_id), true)
+end
+
+function mod_menu.set_config_enabled(mod_id, value)
+	mod_menu.set_storage_bool(storage_key(mod_id), value)
+end
+
+function mod_menu.has_enabled_config(mod_id)
+	return mod_menu.has_settings(mod_id) and mod_menu.is_config_enabled(mod_id)
+end
+
+function mod_menu.is_setting_enabled(mod_id, setting_key)
+	return mod_menu.get_storage_bool(setting_enabled_key(mod_id, setting_key), true)
+end
+
+function mod_menu.set_setting_enabled(mod_id, setting_key, value)
+	mod_menu.set_storage_bool(setting_enabled_key(mod_id, setting_key), value)
+end
+
+function mod_menu.toggle_setting_enabled(mod_id, setting_key)
+	local enabled = not mod_menu.is_setting_enabled(mod_id, setting_key)
+	mod_menu.set_setting_enabled(mod_id, setting_key, enabled)
+	return enabled
+end
+
+function mod_menu.clean_detail_text(value)
+	value = tostring(value or ""):gsub("\r\n", "\n"):gsub("\r", "\n")
+	value = value:gsub("<br%s*/%s*>", "\n"):gsub("<br%s*>", "\n")
+	value = value:gsub("<global[^>]*>", ""):gsub("</global>", "")
+	return value
+end
+
+function mod_menu.get_detail_override(mod_id)
+	local value = mod_menu.storage:get_string(detail_override_key(mod_id))
+	if value == "" then
+		return nil
+	end
+	return mod_menu.clean_detail_text(value)
+end
+
+function mod_menu.set_detail_override(mod_id, value)
+	value = mod_menu.clean_detail_text(value)
+	if value:match("%S") then
+		mod_menu.storage:set_string(detail_override_key(mod_id), value)
+	else
+		mod_menu.storage:set_string(detail_override_key(mod_id), "")
+	end
+end
+
+function mod_menu.cancel_detail_edit_on_close()
+	local value = core.settings:get(mod_menu.CANCEL_DETAIL_EDIT_ON_CLOSE_KEY)
+	if value == nil then
+		return true
+	end
+	return value == "true"
+end
+
+function mod_menu.show_mod_paths()
+	local value = core.settings:get(mod_menu.SHOW_MOD_PATHS_KEY)
+	if value == nil then
+		return false
+	end
+	return value == "true"
+end
+
+function mod_menu.chat(player_name, message)
+	core.chat_send_player(player_name, core.colorize("#d7e3ff", "[Mod Menu] ") .. message)
+end
+
+function mod_menu.checkbox_value(value, fallback)
+	if value == nil then
+		return fallback
+	end
+
+	return value == "true"
+end
+
+function mod_menu.localized_badge(id)
+	if id == "game" then
+		return S("Game")
+	elseif id == "library" then
+		return S("Library")
+	elseif id == "core" then
+		return S("Core")
+	elseif id == "config" then
+		return S("Config")
+	end
+
+	return id
+end

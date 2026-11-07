@@ -1,0 +1,556 @@
+# Polish translations for i3.
+# This file is distributed under the same license as the i3 package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: i3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-21 14:16+0000\n"
+"PO-Revision-Date: 2026-08-21 14:16+0000\n"
+"Last-Translator: \n"
+"Language-Team: Polish\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: src/api.lua
+msgid "Inventory"
+msgstr "Ekwipunek"
+
+#: src/api.lua
+msgid "Digging"
+msgstr "Kopanie"
+
+#: src/api.lua
+msgid "Digging (by chance)"
+msgstr "Kopanie (z prawdopodobieństwem)"
+
+#: src/api.lua
+msgid "Sort items by name (A-Z)"
+msgstr "Sortuj przedmioty według nazwy (A-Z)"
+
+#: src/api.lua
+msgid "Sort items by number of items per stack"
+msgstr "Sortuj przedmioty według liczby przedmiotów w stosie"
+
+#: src/api.lua
+msgid "All"
+msgstr "Wszystko"
+
+#: src/api.lua
+msgid "Nodes"
+msgstr "Węzły"
+
+#: src/api.lua
+msgid "Items"
+msgstr "Przedmioty"
+
+#: src/bags.lua
+msgid "There is already a bag"
+msgstr "Już jest plecak"
+
+#: src/bags.lua
+msgid "This is not a bag"
+msgstr "To nie jest plecak"
+
+#: src/bags.lua
+msgid "@1 (@2% full)"
+msgstr "@1 (@2% pełny)"
+
+#: src/fields.lua
+msgid "Teleported to: @1"
+msgstr "Teleportowano do: @1"
+
+#: src/fields.lua
+msgid "Welcome back home!"
+msgstr "Witaj w domu!"
+
+#: src/fields.lua
+msgid "You already have set a waypoint at this position"
+msgstr "Już jest punkt orientacyjny w tym miejscu"
+
+#: src/fields.lua
+msgid "Your Minetest client needs updating"
+msgstr "Twój klient Luanti potrzebuje aktualizacji"
+
+#: src/groups.lua
+msgid "Any dye"
+msgstr "Dowolny barwnik"
+
+#: src/groups.lua
+msgid "Any coal"
+msgstr "Dowolny węgiel"
+
+#: src/groups.lua
+msgid "Any sand"
+msgstr "Dowolny piasek"
+
+#: src/groups.lua
+msgid "Any tree"
+msgstr "Dowolne drewno"
+
+#: src/groups.lua
+msgid "Any wool"
+msgstr "Dowolna wełna"
+
+#: src/groups.lua
+msgid "Any glass"
+msgstr "Dowolne szkło"
+
+#: src/groups.lua
+msgid "Any stick"
+msgstr "Cualquier palo"
+
+#: src/groups.lua
+msgid "Any stone"
+msgstr "Dowolny kamień"
+
+#: src/groups.lua
+msgid "Any fence"
+msgstr "Dowolny płot"
+
+#: src/groups.lua
+msgid "Any carpet"
+msgstr "Dowolny dywan"
+
+#: src/groups.lua
+msgid "Any flower"
+msgstr "Dowolny kwiat"
+
+#: src/groups.lua
+msgid "Any leaves"
+msgstr "Dowolne liście"
+
+#: src/groups.lua
+msgid "Any vessel"
+msgstr "Cualquier recipiente"
+
+#: src/groups.lua
+msgid "Any wood planks"
+msgstr "Dowolne drewniane deski"
+
+#: src/groups.lua
+msgid "Any mushroom"
+msgstr "Dowolny grzyb"
+
+#: src/groups.lua
+msgid "Any red flower"
+msgstr "Dowolny czerowny kwiat"
+
+#: src/groups.lua
+msgid "Any blue flower"
+msgstr "Dowolny niebieski kwiat"
+
+#: src/groups.lua
+msgid "Any black flower"
+msgstr "Dowolny czarny kwiat"
+
+#: src/groups.lua
+msgid "Any white flower"
+msgstr "Dowolny biały kwiat"
+
+#: src/groups.lua
+msgid "Any green flower"
+msgstr "Dowolny zielony kwiat"
+
+#: src/groups.lua
+msgid "Any orange flower"
+msgstr "Dowolny pomarańczowy kwiat"
+
+#: src/groups.lua
+msgid "Any yellow flower"
+msgstr "Dowolny żółty kwiat"
+
+#: src/groups.lua
+msgid "Any violet flower"
+msgstr "Dowolny fioletowy kwiat"
+
+#: src/groups.lua
+msgid "Any red dye"
+msgstr "Dowolny czerwony barwnik"
+
+#: src/groups.lua
+msgid "Any blue dye"
+msgstr "Dowolny niebieski barwnik"
+
+#: src/groups.lua
+msgid "Any grey dye"
+msgstr "Dowolny szary barwnik"
+
+#: src/groups.lua
+msgid "Any pink dye"
+msgstr "Dowolny różowy barwnik"
+
+#: src/groups.lua
+msgid "Any cyan dye"
+msgstr "Dowolny cyjanowy barwnik"
+
+#: src/groups.lua
+msgid "Any black dye"
+msgstr "Dowolny czarny barwnik"
+
+#: src/groups.lua
+msgid "Any white dye"
+msgstr "Dowolny biały barwnik"
+
+#: src/groups.lua
+msgid "Any brown dye"
+msgstr "Dowolny brązowy barwnik"
+
+#: src/groups.lua
+msgid "Any green dye"
+msgstr "Dowolny zielony barwnik"
+
+#: src/groups.lua
+msgid "Any orange dye"
+msgstr "Dowolny pomarańczowy barwnik"
+
+#: src/groups.lua
+msgid "Any yellow dye"
+msgstr "Dowolny żółty barwnik"
+
+#: src/groups.lua
+msgid "Any violet dye"
+msgstr "Dowolny fioletowy barwnik"
+
+#: src/groups.lua
+msgid "Any magenta dye"
+msgstr "Dowolny karmazynowy barwnik"
+
+#: src/groups.lua
+msgid "Any dark grey dye"
+msgstr "Dowolny ciemnoszary barwnik"
+
+#: src/groups.lua
+msgid "Any dark green dye"
+msgstr "Dowolny ciemnozielony barwnik"
+
+#: src/gui.lua
+msgid "Unknown Item (@1)"
+msgstr "Nieznany Przedmiot (@1)"
+
+#: src/gui.lua
+msgid "Achievements: @1 of @2 (@3)"
+msgstr "Osiągnięcia: @1 z @2 (@3)"
+
+#: src/gui.lua
+msgid "Secret award"
+msgstr "Ukryta nagroda"
+
+#: src/gui.lua
+msgid "Unlock this award to find out what it is"
+msgstr "Odblokuj tę nagrodę, aby dowiedzieć się, czym ona jest"
+
+#: src/gui.lua
+msgid "New waypoint:"
+msgstr "Nowy punkt orientacyjny:"
+
+#: src/gui.lua
+msgid "Add waypoint"
+msgstr "Dodaj punkt orientacyjny"
+
+#: src/gui.lua
+msgid "[Click to teleport]"
+msgstr "[Kliknij, aby teleportować]"
+
+#: src/gui.lua
+msgid "Remove waypoint"
+msgstr "Usuń punkt orientacyjny"
+
+#: src/gui.lua
+msgid "Change color"
+msgstr "Zmień kolor"
+
+#: src/gui.lua
+msgid "Preview the waypoint area"
+msgstr "Podgląd obszaru punktu orientacyjnego"
+
+#: src/gui.lua
+msgid "Show waypoint"
+msgstr "Pokaż punkt orientacyjny"
+
+#: src/gui.lua
+msgid "Hide waypoint"
+msgstr "Ukryj punkt orientacyjny"
+
+#: src/gui.lua
+msgid "Rename the bag"
+msgstr "Zmień nazwę plecaka"
+
+#: src/gui.lua
+msgid "Helmet"
+msgstr "Hełm"
+
+#: src/gui.lua
+msgid "Chest"
+msgstr "Napierśnik"
+
+#: src/gui.lua
+msgid "Leggings"
+msgstr "Nogawice"
+
+#: src/gui.lua
+msgid "Boots"
+msgstr "Buty"
+
+#: src/gui.lua
+msgid "Shield"
+msgstr "Tarcza"
+
+#: src/gui.lua
+msgid "Armor level"
+msgstr "Poziom zbroi"
+
+#: src/gui.lua
+msgid "Armor healing"
+msgstr "Leczenie zbroi"
+
+#: src/gui.lua
+msgid "Confirm trash?"
+msgstr "Na pewno usunąć?"
+
+#: src/gui.lua
+msgid "Yes"
+msgstr "Tak"
+
+#: src/gui.lua
+msgid "No"
+msgstr "Nie"
+
+#: src/gui.lua
+msgid "Home"
+msgstr "Dom"
+
+#: src/gui.lua
+msgid "Style"
+msgstr "Styl"
+
+#: src/gui.lua
+msgid "Sorting"
+msgstr "Sortowanie"
+
+#: src/gui.lua
+msgid "No home set"
+msgstr "Nie ustawiono domu"
+
+#: src/gui.lua
+msgid "Set home"
+msgstr "Ustaw dom"
+
+#: src/gui.lua
+msgid "Hide tabs"
+msgstr "Ukryj karty"
+
+#: src/gui.lua
+msgid "Legacy inventory"
+msgstr "Klasyczny ekwipunek"
+
+#: src/gui.lua
+msgid "HUD description"
+msgstr "Opis HUD"
+
+#: src/gui.lua
+msgid "Font size"
+msgstr "Rozmiar czcionki"
+
+#: src/gui.lua
+msgid "Enable this option to change the style of the right panel"
+msgstr "Aktywuj tę opcję, aby zmienić styl panelu po prawej stronie"
+
+#: src/gui.lua
+msgid "Enable this option to set the classic inventory size in Minetest"
+msgstr "Aktywuj tę opcje, aby ustawić klasyczny rozmiar ekwipunku z Minetest"
+
+#: src/gui.lua
+msgid "Enable this option to show the wielded item description in your HUD"
+msgstr "Aktywuj tę opcję, aby pokazać opis trzymanego przedmiotu w HUD"
+
+#: src/gui.lua
+msgid "Enable this option to collapse the inventory list by grouping some items"
+msgstr "Aktywuj tę opcje, aby zwinąć listę ekwipunku przez grupowanie niektórych przedmiotów"
+
+#: src/gui.lua
+msgid "Compression"
+msgstr "Kompresja"
+
+#: src/gui.lua
+msgid "Reverse mode"
+msgstr "Tryb odwrócony"
+
+#: src/gui.lua
+msgid "Ignore hotbar"
+msgstr "Ignoruj pasek dostępu"
+
+#: src/gui.lua
+msgid "Automation"
+msgstr "Automatyzacja"
+
+#: src/gui.lua
+msgid "Sorting method:"
+msgstr "Metoda sortowania"
+
+#: src/gui.lua
+msgid "Enable this option to compress your inventory"
+msgstr "Aktywuj tę opcję, aby skompresować twój ekwipunek"
+
+#: src/gui.lua
+msgid "Enable this option to sort your inventory in reverse order"
+msgstr "Aktywuj tę opcję, aby sortować twój ekwipunek w odwrotnej kolejności"
+
+#: src/gui.lua
+msgid "Enable this option to sort your inventory except the hotbar slots"
+msgstr "Aktywuj tę opcję, aby automatycznie sortować twój ekwipunek oprócz paska dostępu"
+
+#: src/gui.lua
+msgid "Enable this option to sort your inventory automatically"
+msgstr "Aktywuj tę opcję, aby automatycznie sortować twój ekwipunek"
+
+#: src/gui.lua
+msgid "Clear inventory"
+msgstr "Wyczyść ekwipunek"
+
+#: src/gui.lua
+msgid "Sort inventory"
+msgstr "Sortuj ekwipunek"
+
+#: src/gui.lua
+msgid "Settings"
+msgstr "Ustawienia"
+
+#: src/gui.lua
+msgid "Go home"
+msgstr "Idź do domu"
+
+#: src/gui.lua
+msgid "Any item belonging to the groups: @1"
+msgstr "Dowolny przedmiot należący do grup: @1"
+
+#: src/gui.lua
+msgid "Cooking time: @1"
+msgstr "Czas pieczenia: @1"
+
+#: src/gui.lua
+msgid "Burning time: @1"
+msgstr "Czas spalania: @1"
+
+#: src/gui.lua
+msgid "Replaced by @1 on smelting"
+msgstr "Zastąpiane przez @1 po wytapianiu"
+
+#: src/gui.lua
+msgid "Replaced by @1 on burning"
+msgstr "Zastąpiane przez @1 po spaleniu"
+
+#: src/gui.lua
+msgid "Replaced by @1 on crafting"
+msgstr "Zastąpiane przez @1 po wytworzeniu"
+
+#: src/gui.lua
+msgid "Repairable by step of @1"
+msgstr "Naprawialne przez krok @1"
+
+#: src/gui.lua
+msgid "@1 of chance to drop"
+msgstr "@1 szansy na wypadnięcie"
+
+#: src/gui.lua
+msgid "Only drop if using one of these tools: @1"
+msgstr "Tylko wypada po użyciu jednego z tych narzędzi: @1"
+
+#: src/gui.lua
+msgid "Only drop if using this tool: @1"
+msgstr "Tylko wypada przy użyciu tego narzędzia: @1"
+
+#: src/gui.lua
+msgid "Shapeless"
+msgstr "Bezkształtny"
+
+#: src/gui.lua
+msgid "Cooking"
+msgstr "Pieczenie"
+
+#: src/gui.lua
+msgid "Custom recipe"
+msgstr "Własny przepis"
+
+#: src/gui.lua
+msgid "Usage @1 of @2"
+msgstr "Użycie @1 z @2"
+
+#: src/gui.lua
+msgid "Recipe @1 of @2"
+msgstr "Przepis @1 z @2"
+
+#: src/gui.lua
+msgid "Unbookmark this item"
+msgstr "Usuń ten przedmiot z zakładek"
+
+#: src/gui.lua
+msgid "Bookmark this item"
+msgstr "Dodaj ten przedmiot do zakładek"
+
+#: src/gui.lua
+msgid "Unable to bookmark this item, limit reached"
+msgstr "Osiągnięto limit zakładek, nie dodano przedmiotu"
+
+#: src/gui.lua
+msgid "Back to item list"
+msgstr "Wróc do listy przedmiotów"
+
+#: src/gui.lua
+msgid "Quick Crafting"
+msgstr "Szybkie wytwarzanie"
+
+#: src/gui.lua
+msgid "Craft (×@1)"
+msgstr "Stwórz (x@1)"
+
+#: src/gui.lua
+msgid "Missing materials for crafting"
+msgstr "Brakuje materiałów do wytworzenia"
+
+#: src/gui.lua
+msgid "No recipes"
+msgstr "Brak przepisów"
+
+#: src/gui.lua
+msgid "No usages"
+msgstr "Brak użyć"
+
+#: src/gui.lua
+msgid "Search"
+msgstr "Szukaj"
+
+#: src/gui.lua
+msgid "Search..."
+msgstr "Szukaj..."
+
+#: src/gui.lua
+msgid "Clear"
+msgstr "Wyczyść"
+
+#: src/gui.lua
+msgid "Go to page:"
+msgstr "Idź do strony:"
+
+#: src/gui.lua
+msgid "No item to show"
+msgstr "Nie ma przedmiotów do pokazania"
+
+#: src/gui.lua
+msgid "Collect items to reveal more recipes"
+msgstr "Zbierz przedmioty, aby odkryć więcej przepisów"
+
+#: src/gui.lua
+msgid "Click to hide"
+msgstr "Kliknij, aby ukryć"
+
+#: src/gui.lua
+msgid "Click to expand"
+msgstr "Kliknij, aby rozwinąć"
+
+#: src/gui.lua
+msgid "Bookmarks"
+msgstr "Zakładki"

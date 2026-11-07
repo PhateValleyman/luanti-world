@@ -1,0 +1,91 @@
+{
+   "name": "minertrade",
+   "title": "Minertrade",
+   "type": "MOD",
+   "version": "v2.3.1",
+   "dev_state":"ALPHA",
+   "min_minetest_version": "5.7",
+   "max_minetest_version": null,
+   /*
+   "author": [
+      "Lunovox Heavenfinder: [email](mailto:lunovox@disroot.org), [social web](https://mastodon.social/@lunovox), [webchat](https://cloud.disroot.org/call/9aa2t7ib), [xmpp](xmpp:lunovox@disroot.org?join), [Mumble](mumble:mumble.disroot.org), [more contacts](https:libreplanet.org/wiki/User:Lunovox)",
+   ],
+   /**/
+   "authors": [ 
+		{ 
+		   "name": "Lunovox Heavenfinder", 
+		   "email": "lunovox@disroot.org", 
+		   "social web": "https://mastodon.social/@lunovox",
+		   "webchat": "https://cloud.disroot.org/call/9aa2t7ib",
+		   "xmpp": "xmpp:lunovox@disroot.org?join",
+		   "mumble": "mumble:mumble.disroot.org",
+		   "homepage": "https://libreplanet.org/wiki/User:Lunovox", 
+		   "more contacts": "https://libreplanet.org/wiki/User:Lunovox", 
+		}, 
+	], 
+   "tags": [
+      "Commerce / Economy",
+      "Multiplayer-focused",
+      "Crafting",
+      "Beta", 
+   ],
+   "keywords": [ 
+      "lunovox", 
+      "trade", 
+      "Commerce",
+      "Economy",
+      "protection", 
+      "Multiplayer",
+   ], 
+   "languages": [
+      "en",
+      "pt",
+      "pt_BR",
+   ],
+   "supported_games": [
+      "minetest_game", 
+   ],
+   "dependencies": 
+	{ 
+		"default": "https://content.minetest.net/packages/Minetest/minetest_game/", 
+		"dye": "https://content.minetest.net/packages/Minetest/minetest_game/", 
+	}, 
+	"optional_dependencies": 
+	{ 
+		"correio": "https://gitlab.com/lunovox/correio", 
+		"eurn": "https://gitlab.com/lunovox/e-urn", 
+		"computing": "https://gitlab.com/lunovox/computing", 
+	},
+   "license": {
+      "is_foss":true,
+      "name":"GNU AGPL-3.0 or later",
+      "url": "https://gitlab.com/lunovox/minertrade/-/raw/master/LICENSE_CODE",
+   },
+   "media_license": {
+      "is_foss":false,
+      "name":"CC BY-SA 4.0"
+      "url":"https://gitlab.com/lunovox/minertrade/-/blob/master/LICENSE_MEDIA",
+   },
+   "screenshots": [ 
+      "https://gitlab.com/lunovox/minertrade/-/raw/master/screenshot.png", 
+   ], 
+   "website": null,
+   "forums": null,
+   "video_url": null,
+   "donate_url": "https://liberapay.com/Lunovox/donate",
+   "translation_url": "https://gitlab.com/lunovox/minertrade/-/blob/master/locale/README.md",
+   "repo": "https://gitlab.com/lunovox/minertrade.git",
+   "ignore": [ 
+      ".git", 
+      "*.~",
+      "*.old",
+      "*.bkp",
+      "*.backup",
+      "*.mo", 
+      "*.diff", 
+      "*.patch", 
+   ],
+   "issue_tracker": "https://gitlab.com/lunovox/minertrade/-/issues",
+   "short_description":"It adds various types of money, exchange table, Dispensing Machines, ATMs in stores.",
+   "long_description": null,
+}

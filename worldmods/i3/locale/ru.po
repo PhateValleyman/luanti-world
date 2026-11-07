@@ -1,0 +1,639 @@
+# Russian translations for i3.
+# This file is distributed under the same license as the i3 package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: i3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-21 14:16+0000\n"
+"PO-Revision-Date: 2026-08-21 14:16+0000\n"
+"Last-Translator: \n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: src/api.lua
+msgid "Inventory"
+msgstr "Инвентарь"
+
+#: src/api.lua
+msgid "Digging"
+msgstr "Копание"
+
+#: src/api.lua
+msgid "Digging (by chance)"
+msgstr "Копание (шанс)"
+
+#: src/api.lua
+msgid "Sort items by name (A-Z)"
+msgstr ""
+
+#: src/api.lua
+msgid "Sort items by number of items per stack"
+msgstr ""
+
+#: src/api.lua
+msgid "All"
+msgstr "Всё"
+
+#: src/api.lua
+msgid "Nodes"
+msgstr "Блоки"
+
+#: src/api.lua
+msgid "Items"
+msgstr "Предметы"
+
+#: src/bags.lua
+msgid "There is already a bag"
+msgstr "Сумка уже есть"
+
+#: src/bags.lua
+msgid "This is not a bag"
+msgstr "Это не сумка"
+
+#: src/bags.lua
+msgid "@1 (@2% full)"
+msgstr "@1 (заполнена на @2%)"
+
+#: src/fields.lua
+msgid "Teleported to: @1"
+msgstr ""
+
+#: src/fields.lua
+msgid "Welcome back home!"
+msgstr ""
+
+#: src/fields.lua
+msgid "You already have set a waypoint at this position"
+msgstr ""
+
+#: src/fields.lua
+msgid "Your Minetest client needs updating"
+msgstr ""
+
+#: src/groups.lua
+msgid "Any dye"
+msgstr "Любая краска"
+
+#: src/groups.lua
+msgid "Any coal"
+msgstr "Любой уголь"
+
+#: src/groups.lua
+msgid "Any sand"
+msgstr "Любой песок"
+
+#: src/groups.lua
+msgid "Any tree"
+msgstr "Любое дерево"
+
+#: src/groups.lua
+msgid "Any wool"
+msgstr "Любая шерсть"
+
+#: src/groups.lua
+msgid "Any glass"
+msgstr "Любое стекло"
+
+#: src/groups.lua
+msgid "Any stick"
+msgstr "Любая палка"
+
+#: src/groups.lua
+msgid "Any stone"
+msgstr "Любой камень"
+
+#: src/groups.lua
+msgid "Any fence"
+msgstr ""
+
+#: src/groups.lua
+msgid "Any carpet"
+msgstr "Любой ковёр"
+
+#: src/groups.lua
+msgid "Any flower"
+msgstr "Любой цветок"
+
+#: src/groups.lua
+msgid "Any leaves"
+msgstr "Любые листья"
+
+#: src/groups.lua
+msgid "Any vessel"
+msgstr "Любой сосуд"
+
+#: src/groups.lua
+msgid "Any wood planks"
+msgstr "Любые доски"
+
+#: src/groups.lua
+msgid "Any mushroom"
+msgstr "Любой гриб"
+
+#: src/groups.lua
+msgid "Any red flower"
+msgstr "Любой красный цветок"
+
+#: src/groups.lua
+msgid "Any blue flower"
+msgstr "Любой синий цветок"
+
+#: src/groups.lua
+msgid "Any black flower"
+msgstr "Любой черный цветок"
+
+#: src/groups.lua
+msgid "Any white flower"
+msgstr "Любой белый цветок"
+
+#: src/groups.lua
+msgid "Any green flower"
+msgstr "Любой зелёный цветок"
+
+#: src/groups.lua
+msgid "Any orange flower"
+msgstr "Любой оранжевый цветок"
+
+#: src/groups.lua
+msgid "Any yellow flower"
+msgstr "Любой жёлтый цветок"
+
+#: src/groups.lua
+msgid "Any violet flower"
+msgstr "Любой фиолетовый цветок"
+
+#: src/groups.lua
+msgid "Any red dye"
+msgstr "Любая красная краска"
+
+#: src/groups.lua
+msgid "Any blue dye"
+msgstr "Любая синяя краска"
+
+#: src/groups.lua
+msgid "Any grey dye"
+msgstr "Любая серая краска"
+
+#: src/groups.lua
+msgid "Any pink dye"
+msgstr "Любая розовая краска"
+
+#: src/groups.lua
+msgid "Any cyan dye"
+msgstr "Любая голубая краска"
+
+#: src/groups.lua
+msgid "Any black dye"
+msgstr "Любая черная краска"
+
+#: src/groups.lua
+msgid "Any white dye"
+msgstr "Любая белая краска"
+
+#: src/groups.lua
+msgid "Any brown dye"
+msgstr "Любая коричневая краска"
+
+#: src/groups.lua
+msgid "Any green dye"
+msgstr "Любая зелёная краска"
+
+#: src/groups.lua
+msgid "Any orange dye"
+msgstr "Любая оранжевая краска"
+
+#: src/groups.lua
+msgid "Any yellow dye"
+msgstr "Любая жёлтая краска"
+
+#: src/groups.lua
+msgid "Any violet dye"
+msgstr "Любая фиолетовая краска"
+
+#: src/groups.lua
+msgid "Any magenta dye"
+msgstr "Любая пурпурная краска"
+
+#: src/groups.lua
+msgid "Any dark grey dye"
+msgstr "Любая серая краска"
+
+#: src/groups.lua
+msgid "Any dark green dye"
+msgstr "Любая тёмно-зелёная краска"
+
+#: src/gui.lua
+msgid "Unknown Item (@1)"
+msgstr "Неизвестный предмет (@1)"
+
+#: src/gui.lua
+msgid "Achievements: @1 of @2 (@3)"
+msgstr "Достижения: @1 из @2 (@3)"
+
+#: src/gui.lua
+msgid "Secret award"
+msgstr ""
+
+#: src/gui.lua
+msgid "Unlock this award to find out what it is"
+msgstr ""
+
+#: src/gui.lua
+msgid "New waypoint:"
+msgstr ""
+
+#: src/gui.lua
+msgid "Add waypoint"
+msgstr "Добавить путевую точку"
+
+#: src/gui.lua
+msgid "[Click to teleport]"
+msgstr "[Кликнуть для телепорта]"
+
+#: src/gui.lua
+msgid "Remove waypoint"
+msgstr "Удалить путевую точку"
+
+#: src/gui.lua
+msgid "Change color"
+msgstr "Изменить цвет"
+
+#: src/gui.lua
+msgid "Preview the waypoint area"
+msgstr "Предпросмотр территории вокруг точки"
+
+#: src/gui.lua
+msgid "Show waypoint"
+msgstr "Показать путевую точку"
+
+#: src/gui.lua
+msgid "Hide waypoint"
+msgstr "Спрятать путевую точку"
+
+#: src/gui.lua
+msgid "Rename the bag"
+msgstr "Переименовать сумку"
+
+#: src/gui.lua
+msgid "Helmet"
+msgstr "Шлем"
+
+#: src/gui.lua
+msgid "Chest"
+msgstr "Нагрудник"
+
+#: src/gui.lua
+msgid "Leggings"
+msgstr "Поножи"
+
+#: src/gui.lua
+msgid "Boots"
+msgstr "Ботинки"
+
+#: src/gui.lua
+msgid "Shield"
+msgstr "Щит"
+
+#: src/gui.lua
+msgid "Armor level"
+msgstr "Уровень брони"
+
+#: src/gui.lua
+msgid "Armor healing"
+msgstr "Лечение брони"
+
+#: src/gui.lua
+msgid "Confirm trash?"
+msgstr "Удалить всё?"
+
+#: src/gui.lua
+msgid "Yes"
+msgstr "Да"
+
+#: src/gui.lua
+msgid "No"
+msgstr "Нет"
+
+#: src/gui.lua
+msgid "Home"
+msgstr "Дом"
+
+#: src/gui.lua
+msgid "Style"
+msgstr "Стиль"
+
+#: src/gui.lua
+msgid "Sorting"
+msgstr "Сортировка"
+
+#: src/gui.lua
+msgid "No home set"
+msgstr "Не установлен дом"
+
+#: src/gui.lua
+msgid "Set home"
+msgstr "Установить дом"
+
+#: src/gui.lua
+msgid "Hide tabs"
+msgstr "Скрыть вкладки"
+
+#: src/gui.lua
+msgid "Legacy inventory"
+msgstr "Старый инвентарь"
+
+#: src/gui.lua
+msgid "HUD description"
+msgstr "HUD описания"
+
+#: src/gui.lua
+msgid "Font size"
+msgstr "Размер шрифта"
+
+#: src/gui.lua
+msgid "Enable this option to change the style of the right panel"
+msgstr "Включите эту опцию чтобы изменить стиль правой панели"
+
+#: src/gui.lua
+msgid "Enable this option to set the classic inventory size in Minetest"
+msgstr "Включите эту опцию чтобы использовать классический размер инвенторя Minetest"
+
+#: src/gui.lua
+msgid "Enable this option to show the wielded item description in your HUD"
+msgstr "Включите эту опцию чтобы показывать описание предмета в руке"
+
+#: src/gui.lua
+msgid "Enable this option to collapse the inventory list by grouping some items"
+msgstr "Включите эту опцию чтобы уменьшить список предметов, сгруппировав некоторые"
+
+#: src/gui.lua
+msgid "Compression"
+msgstr "Сжатие"
+
+#: src/gui.lua
+msgid "Reverse mode"
+msgstr "Обр. порядок"
+
+#: src/gui.lua
+msgid "Ignore hotbar"
+msgstr "Игнор. хотбар"
+
+#: src/gui.lua
+msgid "Automation"
+msgstr "Автоматизация"
+
+#: src/gui.lua
+msgid "Sorting method:"
+msgstr "Метод сортировки:"
+
+#: src/gui.lua
+msgid "Enable this option to compress your inventory"
+msgstr "Включите эту опцию чтобы сжать инвентарь"
+
+#: src/gui.lua
+msgid "Enable this option to sort your inventory in reverse order"
+msgstr "Включите эту опцию чтобы сортировать инвентарь в обратном порядке"
+
+#: src/gui.lua
+msgid "Enable this option to sort your inventory except the hotbar slots"
+msgstr "Включите эту опцию чтобы сортировать инвентарь, кроме быстрых слотов"
+
+#: src/gui.lua
+msgid "Enable this option to sort your inventory automatically"
+msgstr "Включите эту опцию чтобы сортировать инвентарь автоматически"
+
+#: src/gui.lua
+msgid "Clear inventory"
+msgstr "Очистить инвентарь"
+
+#: src/gui.lua
+msgid "Sort inventory"
+msgstr "Сортировать инвентарь"
+
+#: src/gui.lua
+msgid "Settings"
+msgstr "Настройки"
+
+#: src/gui.lua
+msgid "Go home"
+msgstr "Домой"
+
+#: src/gui.lua
+msgid "Any item belonging to the groups: @1"
+msgstr "Любой предмет, принадлежащий к группам: @1"
+
+#: src/gui.lua
+msgid "Cooking time: @1"
+msgstr "Время приготовления: @1"
+
+#: src/gui.lua
+msgid "Burning time: @1"
+msgstr "Время горения: @1"
+
+#: src/gui.lua
+msgid "Replaced by @1 on smelting"
+msgstr "Заменяется @1 при плавлении"
+
+#: src/gui.lua
+msgid "Replaced by @1 on burning"
+msgstr "Заменяется @1 при сгорании"
+
+#: src/gui.lua
+msgid "Replaced by @1 on crafting"
+msgstr "Заменяется @1 при крафте"
+
+#: src/gui.lua
+msgid "Repairable by step of @1"
+msgstr "Ремонтируемый с помощью @1"
+
+#: src/gui.lua
+msgid "@1 of chance to drop"
+msgstr "@1 шанс выпадения"
+
+#: src/gui.lua
+msgid "Only drop if using one of these tools: @1"
+msgstr "Выпадает только при использовании следующих инструментов: @1"
+
+#: src/gui.lua
+msgid "Only drop if using this tool: @1"
+msgstr "Выпадает только при использовании этого инструмента: @1"
+
+#: src/gui.lua
+msgid "Shapeless"
+msgstr "Бесформенный"
+
+#: src/gui.lua
+msgid "Cooking"
+msgstr "Приготовление"
+
+#: src/gui.lua
+msgid "Custom recipe"
+msgstr "Доп. рецепт"
+
+#: src/gui.lua
+msgid "Usage @1 of @2"
+msgstr "Использование @1 из @2"
+
+#: src/gui.lua
+msgid "Recipe @1 of @2"
+msgstr "Рецепт @1 из @2"
+
+#: src/gui.lua
+msgid "Unbookmark this item"
+msgstr "Убрать предмет из закладок"
+
+#: src/gui.lua
+msgid "Bookmark this item"
+msgstr "Добавить предмет в закладки"
+
+#: src/gui.lua
+msgid "Unable to bookmark this item, limit reached"
+msgstr ""
+
+#: src/gui.lua
+msgid "Back to item list"
+msgstr "Назад к списку предметов"
+
+#: src/gui.lua
+msgid "Quick Crafting"
+msgstr "Быстрый Крафт"
+
+#: src/gui.lua
+msgid "Craft (×@1)"
+msgstr "Крафт (×@1)"
+
+#: src/gui.lua
+msgid "Missing materials for crafting"
+msgstr "Отсутствуют материалы для крафта"
+
+#: src/gui.lua
+msgid "No recipes"
+msgstr "Нет рецептов"
+
+#: src/gui.lua
+msgid "No usages"
+msgstr "Нет способов использования"
+
+#: src/gui.lua
+msgid "Search"
+msgstr "Поиск"
+
+#: src/gui.lua
+msgid "Search..."
+msgstr "Поиск..."
+
+#: src/gui.lua
+msgid "Clear"
+msgstr "Очистить"
+
+#: src/gui.lua
+msgid "Go to page:"
+msgstr ""
+
+#: src/gui.lua
+msgid "No item to show"
+msgstr "Нет предметов для показа"
+
+#: src/gui.lua
+msgid "Collect items to reveal more recipes"
+msgstr "Собирайте предметы, чтобы открыть больше рецептов"
+
+#: src/gui.lua
+msgid "Click to hide"
+msgstr "ЛКМ спрятать"
+
+#: src/gui.lua
+msgid "Click to expand"
+msgstr "ЛКМ развернуть"
+
+#: src/gui.lua
+msgid "Bookmarks"
+msgstr "Закладки"
+
+# Obsolete entries from previous versions of the mod.
+
+#~ msgid "@1 Backpack"
+#~ msgstr "@1 рюкзак"
+
+#~ msgid "@1 added in your inventory"
+#~ msgstr "@1 добавлено в ваш инвентарь"
+
+#~ msgid "@1 new recipe(s) discovered!"
+#~ msgstr "@1 новый рецепт открыт!"
+
+#~ msgid "@1 spawned"
+#~ msgstr "@1 появился(лась)"
+
+#~ msgid "Armor"
+#~ msgstr "Броня"
+
+#~ msgid "Awards"
+#~ msgstr "Достижения"
+
+#~ msgid "Bag"
+#~ msgstr "Сумка"
+
+#~ msgid "Cannot mark this item. Bookmark limit reached."
+#~ msgstr "Невозможно отметить предмет. Достигнут лимит закладок."
+
+#~ msgid "Collapse list"
+#~ msgstr "Свернуть список"
+
+#~ msgid "Compress items"
+#~ msgstr "Сжать предметы"
+
+#~ msgid "Craft (x@1)"
+#~ msgstr "Крафт (x@1)"
+
+#~ msgid "Heal"
+#~ msgstr "Лечение"
+
+#~ msgid "Large"
+#~ msgstr "большой"
+
+#~ msgid "Level"
+#~ msgstr "Уровень"
+
+#~ msgid "Mark this item"
+#~ msgstr "Отметить этот предмет"
+
+#~ msgid "Medium"
+#~ msgstr "средний"
+
+#~ msgid "New waypoint"
+#~ msgstr "Новая путевая точка"
+
+#~ msgid "Quick crafting"
+#~ msgstr "Быстрый крафт"
+
+#~ msgid "Skins"
+#~ msgstr "Скины"
+
+#~ msgid "Small"
+#~ msgstr "малый"
+
+#~ msgid "Sort items (A-Z)"
+#~ msgstr "Сортировка (A-Z)"
+
+#~ msgid "Sort items (Z-A)"
+#~ msgstr "Сортировка (Z-A)"
+
+#~ msgid "The inventory is extended by @1 slots"
+#~ msgstr "Инвентарь расширен на @1 слотов"
+
+#~ msgid "Trash all items"
+#~ msgstr "Уничтожить все предметы"
+
+#~ msgid "Unmark this item"
+#~ msgstr "Снять отметку с этого предмета"
+
+#~ msgid "Waypoints"
+#~ msgstr "Путевые точки"
+
+#~ msgid "You cannot put a bag in another bag"
+#~ msgstr "Нельзя положить сумку в другую сумку"

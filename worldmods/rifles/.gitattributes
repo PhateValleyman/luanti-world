@@ -1,0 +1,4 @@
+*.lua eol=lf
+*.md eol=lf
+*.tr eol=lf
+*.conf eol=lf

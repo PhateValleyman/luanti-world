@@ -1,0 +1,38 @@
+# MINERTRADE SETTINGS
+# Only players with "salary" privilege received a daily payment.
+
+# MINERTRADE:
+# Allows you to print the debug information of this mod on the screen.
+# Default: false
+minertrade.debug (Show Minertrade Debug) bool false
+
+# MINERTRADE:
+# Whether the database will be BASE64 compressed.
+# If enabled will save database bank in file '.db64', 
+#     else in file '.tbl' without compression.
+# Default: true
+minertrade.save_compressed (Database Compressed) bool true
+
+# MINERTRADE:
+# Maximum record number of bank statements.
+# Default: 30 | Min: 1 | Max: 300
+minertrade.bank.max_statements (Maximum Record Statements) int 30 1 300
+
+# MINERTRADE:
+# If server will reward the player daily..
+# Default: false
+minertrade.salary.enabled (Daily Salary Enabled) bool true
+
+# MINERTRADE:
+# Value of the prize minercash that each player will 
+#     receive at the end of the virtual day.
+# Default: 1 | Min: 1
+minertrade.salary.value (Daily Salary Value) int 1 1
+
+# MINERTRADE:
+# Time interval in seconds to check for rewardable players.
+# WARNING: Decreasing this value too much can cause server lag.
+# Default: 60 | Min: 1 | Max: 86400
+minertrade.salary.intervalcheck (Interval Check Salary) int 60 1 86400
+
+

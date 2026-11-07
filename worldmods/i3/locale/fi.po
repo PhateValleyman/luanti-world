@@ -1,0 +1,570 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the i3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: i3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-21 14:16+0000\n"
+"PO-Revision-Date: 2026-08-30 00:43+0000\n"
+"Last-Translator: Jouni Järvinen <rautajunk@gmail.com>\n"
+"Language-Team: Finnish <https://translate.luanti.ch/projects/mt-mods/i3/fi/>"
+"\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.8.1\n"
+
+#: src/api.lua
+msgid "Inventory"
+msgstr "Tavaraluettelo"
+
+#: src/api.lua
+msgid "Digging"
+msgstr "Kaivaminen"
+
+#: src/api.lua
+msgid "Digging (by chance)"
+msgstr "Kaivaminen (sattumalta)"
+
+#: src/api.lua
+msgid "Sort items by name (A-Z)"
+msgstr "Lajittele esineet nimen mukaan (A-Ö)"
+
+#: src/api.lua
+msgid "Sort items by number of items per stack"
+msgstr "Lajittele esineet pinossa olevien esineiden lukumäärän mukaan"
+
+#: src/api.lua
+msgid "All"
+msgstr "Kaikki"
+
+#: src/api.lua
+msgid "Nodes"
+msgstr "Kuutiot"
+
+#: src/api.lua
+msgid "Items"
+msgstr "Esineet"
+
+#: src/bags.lua
+msgid "There is already a bag"
+msgstr "Säkki on jo olemassa"
+
+#: src/bags.lua
+msgid "This is not a bag"
+msgstr "Tämä ei ole säkki"
+
+#: src/bags.lua
+msgid "@1 (@2% full)"
+msgstr "@1 (@2% täynnä)"
+
+#: src/fields.lua
+msgid "Teleported to: @1"
+msgstr "Teleportattu kohteeseen: @1"
+
+#: src/fields.lua
+msgid "Welcome back home!"
+msgstr "Tervetuloa takaisin kotiin!"
+
+#: src/fields.lua
+msgid "You already have set a waypoint at this position"
+msgstr "Olet jo asettanut reittipisteen tähän sijaintiin"
+
+#: src/fields.lua
+msgid "Your Minetest client needs updating"
+msgstr "Minetest-asiakasohjelmasi tarvitsee päivitystä"
+
+#: src/groups.lua
+msgid "Any dye"
+msgstr "Mikä tahansa väriaine"
+
+#: src/groups.lua
+msgid "Any coal"
+msgstr "Mikä tahansa hiili"
+
+#: src/groups.lua
+msgid "Any sand"
+msgstr "Mikä tahansa hiekka"
+
+#: src/groups.lua
+msgid "Any tree"
+msgstr "Mikä tahansa puu"
+
+#: src/groups.lua
+msgid "Any wool"
+msgstr "Mikä tahansa villa"
+
+#: src/groups.lua
+msgid "Any glass"
+msgstr "Mikä tahansa lasi"
+
+#: src/groups.lua
+msgid "Any stick"
+msgstr "Mikä tahansa keppi"
+
+#: src/groups.lua
+msgid "Any stone"
+msgstr "Mikä tahansa kivi"
+
+#: src/groups.lua
+msgid "Any fence"
+msgstr "Mikä tahansa aita"
+
+#: src/groups.lua
+msgid "Any carpet"
+msgstr "Mikä tahansa matto"
+
+#: src/groups.lua
+msgid "Any flower"
+msgstr "Mikä tahansa kukka"
+
+#: src/groups.lua
+msgid "Any leaves"
+msgstr "Mikä tahansa lehdet"
+
+#: src/groups.lua
+msgid "Any vessel"
+msgstr "Mikä tahansa astia"
+
+#: src/groups.lua
+msgid "Any wood planks"
+msgstr "Mikä tahansa puulankku"
+
+#: src/groups.lua
+msgid "Any mushroom"
+msgstr "Mikä tahansa sieni"
+
+#: src/groups.lua
+msgid "Any red flower"
+msgstr "Mikä tahansa punainen kukka"
+
+#: src/groups.lua
+msgid "Any blue flower"
+msgstr "Mikä tahansa sininen kukka"
+
+#: src/groups.lua
+msgid "Any black flower"
+msgstr "Mikä tahansa musta kukka"
+
+#: src/groups.lua
+msgid "Any white flower"
+msgstr "Mikä tahansa valkoinen kukka"
+
+#: src/groups.lua
+msgid "Any green flower"
+msgstr "Mikä tahansa vihreä kukka"
+
+#: src/groups.lua
+msgid "Any orange flower"
+msgstr "Mikä tahansa oranssi kukka"
+
+#: src/groups.lua
+msgid "Any yellow flower"
+msgstr "Mikä tahansa keltainen kukka"
+
+#: src/groups.lua
+msgid "Any violet flower"
+msgstr "Mikä tahansa violetti kukka"
+
+#: src/groups.lua
+msgid "Any red dye"
+msgstr "Mikä tahansa punainen väriaine"
+
+#: src/groups.lua
+msgid "Any blue dye"
+msgstr "Mikä tahansa sininen väriaine"
+
+#: src/groups.lua
+msgid "Any grey dye"
+msgstr "Mikä tahansa harmaa väriaine"
+
+#: src/groups.lua
+msgid "Any pink dye"
+msgstr "Mikä tahansa vaaleanpunainen väriaine"
+
+#: src/groups.lua
+msgid "Any cyan dye"
+msgstr "Mikä tahansa syaani väriaine"
+
+#: src/groups.lua
+msgid "Any black dye"
+msgstr "Mikä tahansa musta väriaine"
+
+#: src/groups.lua
+msgid "Any white dye"
+msgstr "Mikä tahansa valkoinen väriaine"
+
+#: src/groups.lua
+msgid "Any brown dye"
+msgstr "Mikä tahansa ruskea väriaine"
+
+#: src/groups.lua
+msgid "Any green dye"
+msgstr "Mikä tahansa vihreä väriaine"
+
+#: src/groups.lua
+msgid "Any orange dye"
+msgstr "Mikä tahansa oranssi väriaine"
+
+#: src/groups.lua
+msgid "Any yellow dye"
+msgstr "Mikä tahansa keltainen väriaine"
+
+#: src/groups.lua
+msgid "Any violet dye"
+msgstr "Mikä tahansa violetti väriaine"
+
+#: src/groups.lua
+msgid "Any magenta dye"
+msgstr "Mikä tahansa magenta väriaine"
+
+#: src/groups.lua
+msgid "Any dark grey dye"
+msgstr "Mikä tahansa tummanharmaa väriaine"
+
+#: src/groups.lua
+msgid "Any dark green dye"
+msgstr "Mikä tahansa tummanvihreä väriaine"
+
+#: src/gui.lua
+msgid "Unknown Item (@1)"
+msgstr "Tuntematon esine (@1)"
+
+#: src/gui.lua
+msgid "Achievements: @1 of @2 (@3)"
+msgstr "Saavutukset: @1/@2 (@3)"
+
+#: src/gui.lua
+msgid "Secret award"
+msgstr "Salainen palkinto"
+
+#: src/gui.lua
+msgid "Unlock this award to find out what it is"
+msgstr "Voita tämä palkinto saadaksesi selville, mikä se on"
+
+#: src/gui.lua
+msgid "New waypoint:"
+msgstr "Uusi reittipiste:"
+
+#: src/gui.lua
+msgid "Add waypoint"
+msgstr "Lisää reittipiste"
+
+#: src/gui.lua
+msgid "[Click to teleport]"
+msgstr "[Klikkaa teleportataksesi]"
+
+#: src/gui.lua
+msgid "Remove waypoint"
+msgstr "Poista reittipiste"
+
+#: src/gui.lua
+msgid "Change color"
+msgstr "Vaihda väriä"
+
+#: src/gui.lua
+msgid "Preview the waypoint area"
+msgstr "Esikatsele reittipistealuetta"
+
+#: src/gui.lua
+msgid "Show waypoint"
+msgstr "Näytä reittipiste"
+
+#: src/gui.lua
+msgid "Hide waypoint"
+msgstr "Piilota reittipiste"
+
+#: src/gui.lua
+msgid "Rename the bag"
+msgstr "Nimeä uudelleen säkki"
+
+#: src/gui.lua
+msgid "Helmet"
+msgstr "Kypärä"
+
+#: src/gui.lua
+msgid "Chest"
+msgstr "Rintapanssari"
+
+#: src/gui.lua
+msgid "Leggings"
+msgstr "Leggingsit"
+
+#: src/gui.lua
+msgid "Boots"
+msgstr "Saappaat"
+
+#: src/gui.lua
+msgid "Shield"
+msgstr "Kilpi"
+
+#: src/gui.lua
+msgid "Armor level"
+msgstr "Panssarin taso"
+
+#: src/gui.lua
+msgid "Armor healing"
+msgstr "Panssarilähtöinenn paraneminen"
+
+#: src/gui.lua
+msgid "Confirm trash?"
+msgstr "Vahvistatko roskakoriin?"
+
+#: src/gui.lua
+msgid "Yes"
+msgstr "Kyllä"
+
+#: src/gui.lua
+msgid "No"
+msgstr "Ei"
+
+#: src/gui.lua
+msgid "Home"
+msgstr "Etusivu"
+
+#: src/gui.lua
+msgid "Style"
+msgstr "Tyyli"
+
+#: src/gui.lua
+msgid "Sorting"
+msgstr "Lajittelu"
+
+#: src/gui.lua
+msgid "No home set"
+msgstr "Kotia ei asetettu"
+
+#: src/gui.lua
+msgid "Set home"
+msgstr "Aseta koti"
+
+#: src/gui.lua
+msgid "Hide tabs"
+msgstr "Piilota välilehdet"
+
+#: src/gui.lua
+msgid "Legacy inventory"
+msgstr "Vanha tavaraluettelo"
+
+#: src/gui.lua
+msgid "HUD description"
+msgstr "HUD-kuvaus"
+
+#: src/gui.lua
+msgid "Font size"
+msgstr "Fonttikoko"
+
+#: src/gui.lua
+msgid "Enable this option to change the style of the right panel"
+msgstr "Ota tämä asetus käyttöön muuttaaksesi oikean paneelin tyyliä"
+
+#: src/gui.lua
+msgid "Enable this option to set the classic inventory size in Minetest"
+msgstr ""
+"Ota tämä asetus käyttöön asettaaksesi klassisen tavaraluettelon koon "
+"Minetestissä"
+
+#: src/gui.lua
+msgid "Enable this option to show the wielded item description in your HUD"
+msgstr ""
+"Ota tämä asetus käyttöön näyttääksesi käytetyn esineen kuvauksen HUDissasi"
+
+#: src/gui.lua
+msgid "Enable this option to collapse the inventory list by grouping some items"
+msgstr ""
+"Ota tämä asetus käyttöön tiivistääksesi tavaraluettelon ryhmittelemällä "
+"joitakin esineitä"
+
+#: src/gui.lua
+msgid "Compression"
+msgstr "Pakkaus"
+
+#: src/gui.lua
+msgid "Reverse mode"
+msgstr "Käänteinen toiminta"
+
+#: src/gui.lua
+msgid "Ignore hotbar"
+msgstr "Ohita pikapalkki"
+
+#: src/gui.lua
+msgid "Automation"
+msgstr "Automaatio"
+
+#: src/gui.lua
+msgid "Sorting method:"
+msgstr "Lajittelutapa:"
+
+#: src/gui.lua
+msgid "Enable this option to compress your inventory"
+msgstr "Ota tämä asetus käyttöön pakataksesi tavaraluettelosi"
+
+#: src/gui.lua
+msgid "Enable this option to sort your inventory in reverse order"
+msgstr ""
+"Ota tämä asetus käyttöön lajitellaksesi tavaraluettelosi käänteisessä "
+"järjestyksessä"
+
+#: src/gui.lua
+msgid "Enable this option to sort your inventory except the hotbar slots"
+msgstr ""
+"Ota tämä asetus käyttöön lajitellaksesi tavaraluettelosi pikapalkin paikkoja "
+"lukuun ottamatta"
+
+#: src/gui.lua
+msgid "Enable this option to sort your inventory automatically"
+msgstr ""
+"Ota tämä asetus käyttöön lajitellaksesi tavaraluettelosi automaattisesti"
+
+#: src/gui.lua
+msgid "Clear inventory"
+msgstr "Tyhjennä tavaraluettelo"
+
+#: src/gui.lua
+msgid "Sort inventory"
+msgstr "Lajittele tavaraluettelo"
+
+#: src/gui.lua
+msgid "Settings"
+msgstr "Asetukset"
+
+#: src/gui.lua
+msgid "Go home"
+msgstr "Siirry kotiin"
+
+#: src/gui.lua
+msgid "Any item belonging to the groups: @1"
+msgstr "Mikä tahansa esine, joka kuuluu ryhmiin: @1"
+
+#: src/gui.lua
+msgid "Cooking time: @1"
+msgstr "Kypsennysaika: @1"
+
+#: src/gui.lua
+msgid "Burning time: @1"
+msgstr "Polttoaika: @1"
+
+#: src/gui.lua
+msgid "Replaced by @1 on smelting"
+msgstr "Korvataan sulatettaessa @1:llä"
+
+#: src/gui.lua
+msgid "Replaced by @1 on burning"
+msgstr "Korvataan poltettaessa @1:llä"
+
+#: src/gui.lua
+msgid "Replaced by @1 on crafting"
+msgstr "Korvataan valmistettaessa @1:llä"
+
+#: src/gui.lua
+msgid "Repairable by step of @1"
+msgstr "Korjattavissa @1 askelissa"
+
+#: src/gui.lua
+msgid "@1 of chance to drop"
+msgstr "@1 mahdollisuus pudota"
+
+#: src/gui.lua
+msgid "Only drop if using one of these tools: @1"
+msgstr "Pudota vain, jos käytetään jotakin näistä työkaluista: @1"
+
+#: src/gui.lua
+msgid "Only drop if using this tool: @1"
+msgstr "Pudota vain, jos käytetään tätä työkalua: @1"
+
+#: src/gui.lua
+msgid "Shapeless"
+msgstr "Muotoilematon"
+
+#: src/gui.lua
+msgid "Cooking"
+msgstr "Kypsennys"
+
+#: src/gui.lua
+msgid "Custom recipe"
+msgstr "Mukautettu resepti"
+
+#: src/gui.lua
+msgid "Usage @1 of @2"
+msgstr "Käyttötarkoitus @1/@2"
+
+#: src/gui.lua
+msgid "Recipe @1 of @2"
+msgstr "Resepti @1/@2"
+
+#: src/gui.lua
+msgid "Unbookmark this item"
+msgstr "Poista esine kirjanmerkeistä"
+
+#: src/gui.lua
+msgid "Bookmark this item"
+msgstr "Lisää esine kirjanmerkkeihin"
+
+#: src/gui.lua
+msgid "Unable to bookmark this item, limit reached"
+msgstr "Tätä esinettä ei voitu lisätä kirjanmerkkeihin, raja saavutettu"
+
+#: src/gui.lua
+msgid "Back to item list"
+msgstr "Takaisin esineluetteloon"
+
+#: src/gui.lua
+msgid "Quick Crafting"
+msgstr "Nopea valmistus"
+
+#: src/gui.lua
+msgid "Craft (×@1)"
+msgstr "Valmista (×@1)"
+
+#: src/gui.lua
+msgid "Missing materials for crafting"
+msgstr "Puuttuvat materiaalit valmistukseen"
+
+#: src/gui.lua
+msgid "No recipes"
+msgstr "Ei reseptejä"
+
+#: src/gui.lua
+msgid "No usages"
+msgstr "Ei käyttötarkoituksia"
+
+#: src/gui.lua
+msgid "Search"
+msgstr "Haku"
+
+#: src/gui.lua
+msgid "Search..."
+msgstr "Haku..."
+
+#: src/gui.lua
+msgid "Clear"
+msgstr "Tyhjennä"
+
+#: src/gui.lua
+msgid "Go to page:"
+msgstr "Siirry sivulle:"
+
+#: src/gui.lua
+msgid "No item to show"
+msgstr "Ei näytettäviä esineitä"
+
+#: src/gui.lua
+msgid "Collect items to reveal more recipes"
+msgstr "Kerää esineitä nähdäksesi lisää reseptejä"
+
+#: src/gui.lua
+msgid "Click to hide"
+msgstr "Piilota napsauttamalla"
+
+#: src/gui.lua
+msgid "Click to expand"
+msgstr "Laajenna napsauttamalla"
+
+#: src/gui.lua
+msgid "Bookmarks"
+msgstr "Kirjanmerkit"

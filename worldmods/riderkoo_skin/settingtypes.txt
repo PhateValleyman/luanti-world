@@ -1,0 +1,2 @@
+# Jméno hráče, který dostane skin. Prázdné = všichni hráči.
+riderkoo_skin_player (Hráč se skinem) string

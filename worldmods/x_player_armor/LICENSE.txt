@@ -1,0 +1,206 @@
+GNU LESSER GENERAL PUBLIC LICENSE
+Version 2.1, February 1999
+
+Copyright (C) 2026 SaKeL
+Based on 3d_armor Copyright (C) 2013-2023 Stuart Jones and contributors.
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation; either version 2.1 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Lesser General Public License for more details.
+
+-------------------------------------------------------------------------------
+Media & Asset Attribution Manifest
+-------------------------------------------------------------------------------
+
+### 3D Models
+
+#### 1. Character Armor, Shield & Preview Models (CC BY-SA 3.0)
+glTF 2.0 Binary (.glb) models in models/:
+- `models/x_player_armor_helmet.glb`
+- `models/x_player_armor_chestplate.glb`
+- `models/x_player_armor_sleeve_l.glb`
+- `models/x_player_armor_sleeve_r.glb`
+- `models/x_player_armor_leggings_l.glb`
+- `models/x_player_armor_leggings_r.glb`
+- `models/x_player_armor_boot_l.glb`
+- `models/x_player_armor_boot_r.glb`
+- `models/x_player_armor_shield.glb`
+- `models/x_player_armor_shield_tower.glb`
+- `models/x_player_armor_preview.glb`
+Rigged, UV-mapped, and exported for Luanti by SaKeL under CC BY-SA 3.0.
+Base geometric references derived from Stuart Jones, MirceaKitsune, and Jordach (CC BY-SA 3.0).
+
+#### 2. Armor Stand Model (CC-BY 4.0)
+- `models/x_player_armor_stand.glb`
+Modeled, rigged, and exported for Luanti by SaKeL under CC-BY 4.0.
+
+#### 3. Master Blender Source Files (CC BY-SA 3.0 / CC-BY 4.0)
+- `assets/x_player_armor_character.blend`: Unified character armature and mesh source file containing all modular armor pieces, preview rig, and shields (standard and tower variants). Authored by SaKeL (CC BY-SA 3.0).
+- `assets/x_player_armor_poster.blend`: Promotional scene and rendering setup. Authored by SaKeL (CC-BY 4.0).
+
+### Textures & Visual Assets
+All armor and shield texture sheets, inventory sprites, UI textures, and VFX particle sheets (CC-BY 4.0):
+
+#### 1. In-World 3D Character Armor Texture Sheets (64x32 UV Mapped)
+Authored, colored, and optimized by SaKeL (CC-BY 4.0):
+- `textures/x_player_armor_admin.png`
+- `textures/x_player_armor_bronze.png`
+- `textures/x_player_armor_cactus.png`
+- `textures/x_player_armor_crystal.png`
+- `textures/x_player_armor_diamond.png`
+- `textures/x_player_armor_gold.png`
+- `textures/x_player_armor_mithril.png`
+- `textures/x_player_armor_mithril_alt.png`
+- `textures/x_player_armor_nether.png`
+- `textures/x_player_armor_steel.png`
+- `textures/x_player_armor_wood.png`
+
+#### 2. Dedicated 2D Pixel-Art Inventory Sprites (16x16 Pixel Art)
+Hand-drawn pixel art sprites by SaKeL (CC-BY 4.0):
+- Helmets:
+  - `textures/x_player_armor_inv_helmet_admin.png`
+  - `textures/x_player_armor_inv_helmet_bronze.png`
+  - `textures/x_player_armor_inv_helmet_cactus.png`
+  - `textures/x_player_armor_inv_helmet_crystal.png`
+  - `textures/x_player_armor_inv_helmet_diamond.png`
+  - `textures/x_player_armor_inv_helmet_gold.png`
+  - `textures/x_player_armor_inv_helmet_mithril.png`
+  - `textures/x_player_armor_inv_helmet_nether.png`
+  - `textures/x_player_armor_inv_helmet_steel.png`
+  - `textures/x_player_armor_inv_helmet_wood.png`
+- Chestplates:
+  - `textures/x_player_armor_inv_chestplate_admin.png`
+  - `textures/x_player_armor_inv_chestplate_bronze.png`
+  - `textures/x_player_armor_inv_chestplate_cactus.png`
+  - `textures/x_player_armor_inv_chestplate_crystal.png`
+  - `textures/x_player_armor_inv_chestplate_diamond.png`
+  - `textures/x_player_armor_inv_chestplate_gold.png`
+  - `textures/x_player_armor_inv_chestplate_mithril.png`
+  - `textures/x_player_armor_inv_chestplate_nether.png`
+  - `textures/x_player_armor_inv_chestplate_steel.png`
+  - `textures/x_player_armor_inv_chestplate_wood.png`
+- Leggings:
+  - `textures/x_player_armor_inv_leggings_admin.png`
+  - `textures/x_player_armor_inv_leggings_bronze.png`
+  - `textures/x_player_armor_inv_leggings_cactus.png`
+  - `textures/x_player_armor_inv_leggings_crystal.png`
+  - `textures/x_player_armor_inv_leggings_diamond.png`
+  - `textures/x_player_armor_inv_leggings_gold.png`
+  - `textures/x_player_armor_inv_leggings_mithril.png`
+  - `textures/x_player_armor_inv_leggings_nether.png`
+  - `textures/x_player_armor_inv_leggings_steel.png`
+  - `textures/x_player_armor_inv_leggings_wood.png`
+- Boots:
+  - `textures/x_player_armor_inv_boots_admin.png`
+  - `textures/x_player_armor_inv_boots_bronze.png`
+  - `textures/x_player_armor_inv_boots_cactus.png`
+  - `textures/x_player_armor_inv_boots_crystal.png`
+  - `textures/x_player_armor_inv_boots_diamond.png`
+  - `textures/x_player_armor_inv_boots_gold.png`
+  - `textures/x_player_armor_inv_boots_mithril.png`
+  - `textures/x_player_armor_inv_boots_nether.png`
+  - `textures/x_player_armor_inv_boots_steel.png`
+  - `textures/x_player_armor_inv_boots_wood.png`
+- Shields:
+  - `textures/x_player_armor_inv_shield_admin.png`
+  - `textures/x_player_armor_inv_shield_bronze.png`
+  - `textures/x_player_armor_inv_shield_cactus.png`
+  - `textures/x_player_armor_inv_shield_crystal.png`
+  - `textures/x_player_armor_inv_shield_diamond.png`
+  - `textures/x_player_armor_inv_shield_gold.png`
+  - `textures/x_player_armor_inv_shield_mithril.png`
+  - `textures/x_player_armor_inv_shield_nether.png`
+  - `textures/x_player_armor_inv_shield_steel.png`
+  - `textures/x_player_armor_inv_shield_wood.png`
+- Enhanced Shields:
+  - `textures/x_player_armor_inv_shield_enhanced_cactus.png`
+  - `textures/x_player_armor_inv_shield_enhanced_wood.png`
+
+#### 3. In-World Enhanced Shield Textures
+Authored by SaKeL (CC-BY 4.0):
+- `textures/x_player_armor_shield_enhanced_cactus.png`
+- `textures/x_player_armor_shield_enhanced_wood.png`
+
+#### 4. Armor Stand & UI Textures
+Authored and arranged by SaKeL (CC-BY 4.0):
+- Stand Node Textures: `textures/x_player_armor_stand_shared.png`, `textures/x_player_armor_stand_locked.png`
+- Stand Inventory Icons: `textures/x_player_armor_stand_inv.png`, `textures/x_player_armor_stand_locked_inv.png`
+- Stand Wardrobe Slot Outlines: `textures/x_player_armor_stand_head.png`, `textures/x_player_armor_stand_torso.png`, `textures/x_player_armor_stand_legs.png`, `textures/x_player_armor_stand_feet.png`, `textures/x_player_armor_stand_shield.png`
+- Navigation & Hotbar Icons: `textures/x_player_armor_icon.png`, `textures/x_player_armor_inventory_plus.png`
+- Baseline Preview Character Skin: `textures/x_player_armor_character.png`
+
+#### 5. Combat VFX Particle Sheet & Media
+Authored by SaKeL (CC-BY 4.0 / CC0 1.0):
+- Combat Particle Sheet: `textures/x_player_armor_particles.png` (8 animation frames: healing sparkles, protective wards, shield impact deflect, and shatter shards)
+- Showcase Media: `screenshot.png` (In-game promotional showcase screenshot)
+- Preview Weapon Sprites: `assets/default_tool_steelsword.png`, `assets/default_tool_diamondsword.png` (Derived from Luanti Game `default` mod, CC-BY-SA 3.0 / CC0 1.0).
+
+### Audio & Sound Effects
+
+#### Armor & Shield Equipment Sounds (CC0 1.0 Universal)
+Mastered, sliced, trimmed, anti-click micro-faded, and transcoded to mono 44.1 kHz Ogg Vorbis specifically for Luanti by SaKeL:
+- `sounds/x_player_armor_equip.1.ogg`
+- `sounds/x_player_armor_equip.2.ogg`
+- `sounds/x_player_armor_equip.3.ogg`
+- `sounds/x_player_armor_unequip.1.ogg`
+- `sounds/x_player_armor_unequip.2.ogg`
+- `sounds/x_player_armor_hit_metal.1.ogg`
+- `sounds/x_player_armor_hit_metal.2.ogg`
+- `sounds/x_player_armor_hit_metal.3.ogg`
+- `sounds/x_player_armor_hit_wood.1.ogg`
+- `sounds/x_player_armor_hit_wood.2.ogg`
+- `sounds/x_player_armor_hit_crystal.1.ogg`
+- `sounds/x_player_armor_hit_crystal.2.ogg`
+- `sounds/x_player_armor_shield_block.1.ogg`
+- `sounds/x_player_armor_shield_block.2.ogg`
+- `sounds/x_player_armor_shield_block.3.ogg`
+- `sounds/x_player_armor_break_metal.ogg`
+- `sounds/x_player_armor_break_wood.ogg`
+- `sounds/x_player_armor_break_crystal.ogg`
+- `sounds/x_player_armor_break_glass.ogg`
+- `sounds/x_player_armor_warn.ogg`
+License: Creative Commons 0 1.0 Universal (CC0 1.0) / Public Domain
+Audio synthesis, mastering, and engineering: SaKeL.
+
+
+#### Armor Stand Node Interaction Sounds (CC0 1.0 Universal)
+Sourced from Freesound.org, sliced, trimmed, anti-click micro-faded, peak-normalized (-1.0 dBFS), and transcoded to mono 44.1 kHz Ogg Vorbis specifically for Luanti by SaKeL:
+- `sounds/x_player_armor_stand_place.1.ogg`:
+  "Wooden Thud (Mono)" (Sound #449955) by Breviceps (CC0 1.0 Universal).
+  Source: https://freesound.org/people/Breviceps/sounds/449955/
+  License: http://creativecommons.org/publicdomain/zero/1.0/
+- `sounds/x_player_armor_stand_dig.1.ogg`:
+  "snd_ImpactSmallWood01.wav" (Sound #381617) by dorian.mastin (CC0 1.0 Universal).
+  Source: https://freesound.org/people/dorian.mastin/sounds/381617/
+  License: http://creativecommons.org/publicdomain/zero/1.0/
+- `sounds/x_player_armor_stand_dig.2.ogg`:
+  "Chop.ogg" (Sound #536736) by egomassive (CC0 1.0 Universal, original recording "Chop" by Kyle Pyke).
+  Source: https://freesound.org/people/egomassive/sounds/536736/
+  License: http://creativecommons.org/publicdomain/zero/1.0/
+- `sounds/x_player_armor_stand_dig.3.ogg`:
+  "Wood impact Single Plank 3" (Sound #569723) by Sheyvan (CC0 1.0 Universal).
+  Source: https://freesound.org/people/Sheyvan/sounds/569723/
+  License: http://creativecommons.org/publicdomain/zero/1.0/
+- `sounds/x_player_armor_stand_dug.1.ogg`:
+  "Crate Break 4.wav" (Sound #66780) by kevinkace (CC0 1.0 Universal).
+  Source: https://freesound.org/people/kevinkace/sounds/66780/
+  License: http://creativecommons.org/publicdomain/zero/1.0/
+- `sounds/x_player_armor_stand_dug.2.ogg`:
+  "Barrel Break 4.wav" (Sound #66772) by kevinkace (CC0 1.0 Universal).
+  Source: https://freesound.org/people/kevinkace/sounds/66772/
+  License: http://creativecommons.org/publicdomain/zero/1.0/
+- `sounds/x_player_armor_stand_footstep.1.ogg`:
+  "Footstep_Wood_Toe_2.wav" (Sound #421152) by GiocoSound (CC0 1.0 Universal).
+  Source: https://freesound.org/people/GiocoSound/sounds/421152/
+  License: http://creativecommons.org/publicdomain/zero/1.0/
+- `sounds/x_player_armor_stand_footstep.2.ogg`:
+  "Footstep_Wood_Toe_1.wav" (Sound #421153) by GiocoSound (CC0 1.0 Universal).
+  Source: https://freesound.org/people/GiocoSound/sounds/421153/
+  License: http://creativecommons.org/publicdomain/zero/1.0/
+

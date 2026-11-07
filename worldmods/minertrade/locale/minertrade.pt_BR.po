@@ -1,0 +1,574 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-08 02:40-0300\n"
+"PO-Revision-Date: 2022-05-18 11:16-0300\n"
+"Last-Translator: Lunovox Heavenfinder <lunovox@disroot.org>\n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: item_exchange_table.lua:13 item_exchange_table.lua:21
+#, lua-format
+msgid "'%s' offer"
+msgstr "'%s' oferece"
+
+#: api.lua:415
+#, lua-format
+msgid "A letter was sent by the dispensing machine '%s' to '%s' advising about '%s'!"
+msgstr "Uma carta foi enviada pela Máquina Dispensadora '%s' para '%s' informando sobre '%s'!"
+
+#: item_dispensing_machine.lua:22
+msgid "ACCEPT"
+msgstr "ACEITAR"
+
+#: item_atm.lua:333
+msgid "ACCOUNT CREATED"
+msgstr "CONTA CRIADA"
+
+#: item_atm.lua:929 item_atm.lua:935 item_atm.lua:1081 item_atm.lua:1112
+msgid "ATM"
+msgstr "CAIXA ELETRÔNICO"
+
+#: item_atm.lua:624
+msgid "ATM entrance"
+msgstr "Entrada do Caixa Eletrônico"
+
+#: item_atm.lua:208
+msgid "Account Holder"
+msgstr "Correntista"
+
+#: item_atm.lua:956
+#, lua-format
+msgid "Account holder '%s' cannot be a beneficiary of itself."
+msgstr "O titular da conta '%s' não pode ser beneficiário de si mesmo."
+
+#: item_minercash.lua:276
+msgid "Allows you to access the bank account of the credit card owner anywhere in the world."
+msgstr "Permite acessar a conta bancária do titular do cartão de crédito em qualquer lugar do mundo."
+
+#: item_atm.lua:325 item_atm.lua:361 item_atm.lua:449 item_atm.lua:489
+#: item_atm.lua:606 item_atm.lua:654
+msgid "BACK"
+msgstr "VOLTAR"
+
+#: item_atm.lua:280
+msgid "BALANCE"
+msgstr "SALDO"
+
+#: item_atm.lua:337 item_atm.lua:495 item_atm.lua:660
+msgid "BALANCES"
+msgstr "SALDOS"
+
+#: item_atm.lua:464 item_minercash.lua:237
+msgid "BANK CHECK"
+msgstr "CHEQUE BANCÁRIO"
+
+#: item_atm.lua:612
+msgid "BANK DEPOSIT"
+msgstr "DEPÓSITO BANCÁRIO"
+
+#: item_atm.lua:681
+msgid "BENEFICIARY NAME"
+msgstr "NOME DO BENEFICIÁRIO"
+
+#: item_minercash.lua:203
+msgid "BLACK MINERMONEY"
+msgstr "NOTA PRETA"
+
+#: item_minercash.lua:38
+msgid "BLUE MINERMONEY"
+msgstr "NOTA AZUL"
+
+#: item_minercash.lua:8
+msgid "Basic craftable minercash with gold and steel."
+msgstr "Minercash básico criado apenas com ouro e aço."
+
+#: item_atm.lua:209
+msgid "Beneficiary"
+msgstr "Beneficiário"
+
+#: api_payday.lua:67
+msgid "CITY HALL"
+msgstr "PREFEITURA"
+
+#: item_atm.lua:293 item_minercash.lua:275
+msgid "CREDIT CARD"
+msgstr "CARTÃO DE CRÉDITO"
+
+#: item_atm.lua:2
+msgid "Can access evolving ATM functions."
+msgstr "Pode acessar funções ATM em desenvolvimento."
+
+#: item_exchange_table.lua:15 item_exchange_table.lua:17
+#: item_exchange_table.lua:23 item_exchange_table.lua:25
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: item_exchange_table.lua:16 item_exchange_table.lua:24
+msgid "Confirm"
+msgstr "Confirmar"
+
+#: item_dispensing_machine.lua:66
+msgid "Ctrl + Right Click Mouse → Customer Interface"
+msgstr "Ctrl + Clique Direito do Mouse → Interface do Cliente"
+
+#: item_dispensing_machine.lua:24
+msgid "Current customer inventory"
+msgstr "Inventário atual do cliente"
+
+#: item_dispensing_machine.lua:16
+msgid "Customer Offer"
+msgstr "Cliente Oferece"
+
+#: item_dispensing_machine.lua:19
+msgid "Customer Receive"
+msgstr "Cliente Recebe"
+
+#: item_atm.lua:288
+msgid "DEPOSITS"
+msgstr "DEPÓSITOS"
+
+#: item_atm.lua:517 item_atm.lua:706
+msgid "DETAILS"
+msgstr "DETALHES"
+
+#: api.lua:409 api.lua:451 item_dispensing_machine.lua:13
+#: item_dispensing_machine.lua:204 item_dispensing_machine.lua:224
+#: item_dispensing_machine.lua:296
+msgid "DISPENSING MACHINE"
+msgstr "MÁQUINA DE DISPENSADORA"
+
+#: item_dispensing_machine.lua:131
+msgid ""
+"DISPENSING MACHINE\n"
+"* Sells your items, even if you are not online."
+msgstr ""
+"MÁQUINA DE DISPENSADORA\n"
+"* Vende seus itens, mesmo se você não estiver online."
+
+#: item_atm.lua:704
+#, fuzzy
+msgid "DO TRANSFER"
+msgstr "TRANSFERIR"
+
+#: item_atm.lua:991 item_atm.lua:1070
+msgid "Deposit and Withdraw your minercash into your bank account."
+msgstr "Deposita e Saca seu dinheiro em sua conta bancária."
+
+#: item_dispensing_machine.lua:297
+msgid "Dispending done!"
+msgstr "Dispensa Concluida!"
+
+#: item_dispensing_machine.lua:154 item_dispensing_machine.lua:235
+#: item_dispensing_machine.lua:240
+#, lua-format
+msgid "Dispensing Machine of '%s'."
+msgstr "Maquina Dispensadora de '%s'."
+
+#: item_atm.lua:206
+msgid "Document Type"
+msgstr "Tipo de Documento"
+
+#: api.lua:421
+msgid "Due to an unknown error, it was not possible to send an email through the dispensing machine!"
+msgstr "Devido a um erro desconhecido, não foi possível enviar um email através da Máquina Dispensadora!"
+
+#: item_exchange_table.lua:6
+msgid ""
+"EXCHANGE TABLE\n"
+"(Player to Player)"
+msgstr ""
+"MESA DE ESCAMBO\n"
+"(Jogador para Jogador)"
+
+#: item_exchange_table.lua:97 item_exchange_table.lua:103
+#: item_exchange_table.lua:113
+msgid ""
+"EXCHANGE TABLE\n"
+"* It makes safe exchanges from player to player without the need to put your items on the ground."
+msgstr ""
+"MESA DE ESCAMBO\n"
+"* Faz trocas seguras jogador a jogador sem a necessidade de colocar seu itens no chão."
+
+#: item_atm.lua:299 item_atm.lua:326 item_atm.lua:362 item_atm.lua:450
+#: item_atm.lua:490 item_atm.lua:607 item_atm.lua:655
+msgid "EXIT"
+msgstr "SAIR"
+
+#: item_minercash.lua:39 item_minercash.lua:72 item_minercash.lua:105
+#: item_minercash.lua:138 item_minercash.lua:171 item_minercash.lua:204
+#, lua-format
+msgid "Equals %02d minercash."
+msgstr "Equivale a %02d minercash."
+
+#: item_minercash.lua:238
+msgid "Equivalent to as much minercash as your creator wants.."
+msgstr "Equivalente a tanto minercash quanto seu criador quiser."
+
+#: item_atm.lua:335
+msgid "FINANCIAL TRANSACTIONS"
+msgstr "TRANSAÇÕES FINANCEIRAS"
+
+#: item_minercash.lua:71
+msgid "GREEN MINERMONEY"
+msgstr "NOTA VERDE"
+
+#: item_atm.lua:294
+msgid "LOANS"
+msgstr "EMPRÉSTIMOS"
+
+#: item_atm.lua:460
+msgid "MINERCASH"
+msgstr "MINERCASH"
+
+#: item_minercash.lua:7
+msgid "MINERCOIN"
+msgstr "MINERMOEDA"
+
+#: item_dispensing_machine.lua:58
+msgid "Make an announcement about what this machine will do"
+msgstr "Faça um anúncio sobre o que esta máquina dispensará"
+
+#: item_atm.lua:331
+msgid "NAME OF BANKING ACCOUNT HOLDER"
+msgstr "NOME DO CORRENTISTA BANCÁRIO"
+
+#: item_atm.lua:376
+msgid "N°"
+msgstr "N°"
+
+#: item_minercash.lua:368
+msgid "OBSOLETE MONEY"
+msgstr "DINHEIRO OBSOLETO"
+
+#: item_minercash.lua:137
+msgid "ORANGE MINERMONEY"
+msgstr "NOTA LARANJA"
+
+#: item_exchange_table.lua:14 item_exchange_table.lua:22
+msgid "Offer"
+msgstr "Oferecer"
+
+#: api_payday.lua:2
+msgid "Only players with this privilege will receive a daily payment."
+msgstr "Somente jogadores com esse privilégio receberão um pagamento diário."
+
+#: item_exchange_table.lua:12 item_exchange_table.lua:20
+msgid "Open"
+msgstr "Abrir"
+
+#: item_atm.lua:50
+#, lua-format
+msgid "Opening '%s' with data bank!"
+msgstr "Abrindo '%s' com dados do banco!"
+
+#: item_atm.lua:990 item_atm.lua:1069
+msgid "PUBLIC ATM"
+msgstr "CAIXA ELETRÔNICO PÚBLICO"
+
+#: item_atm.lua:311 item_atm.lua:423 item_atm.lua:479 item_atm.lua:595
+#: item_atm.lua:644
+#, lua-format
+msgid "Player '%s' is not an account holder of this bank."
+msgstr "O jogador '%s' não é titular de conta deste banco."
+
+#: item_atm.lua:699
+#, fuzzy
+msgid "REASON OF TRANSFER"
+msgstr "MOTIVO DA TRANSFERÊNCIA"
+
+#: item_minercash.lua:170
+msgid "RED MINERMONEY"
+msgstr "NOTA VERMELHA"
+
+#: item_atm.lua:202
+#, lua-format
+msgid "Reason: %s"
+msgstr "Rasão: %s"
+
+#: item_dispensing_machine.lua:47
+msgid "Received (Your Profit)"
+msgstr "Recebido (Seu Lucro)"
+
+#: item_atm.lua:207
+msgid "Responsible Player"
+msgstr "Jogador Responsável"
+
+#: item_atm.lua:455
+msgid "SELECT BANK WITHDRAWAL METHOD"
+msgstr "SELECIONE O MÉTODO DE SAQUE BANCÁRIO"
+
+#: item_atm.lua:295
+msgid "SETTINGS"
+msgstr "CONFIGURAÇÕES"
+
+#: item_atm.lua:281 item_atm.lua:371
+msgid "STATEMENT"
+msgstr "EXTRATO"
+
+#: item_dispensing_machine.lua:63
+msgid "Save The Announcement"
+msgstr "Salvar o anúncio"
+
+#: item_atm.lua:29
+#, lua-format
+msgid "Saving data bank in the file '%s'!"
+msgstr "Salvando dados bancários no arquivo '%s'!"
+
+#: item_atm.lua:367
+msgid "Select a bank statement to view transaction details!"
+msgstr "Selecione uma Transação do Extrato Bancário para ver os detalhes!"
+
+#: item_dispensing_machine.lua:64
+msgid "Seller current inventory"
+msgstr "Inventario atual do vendedor"
+
+#: item_dispensing_machine.lua:49
+msgid "Stock to Offer"
+msgstr "Estoque a Oferetar"
+
+#: item_atm.lua:404
+msgid "TOTAL"
+msgstr "TOTAL"
+
+#: item_atm.lua:427
+msgid "TRANSACTION DETAILS"
+msgstr "DETALHES DA TRANSAÇÃO"
+
+#: item_atm.lua:199 item_atm.lua:206
+#, fuzzy
+msgid "TRANSFER PROOF"
+msgstr "COMPROVANTE DE TRANSFERÊNCIA"
+
+#: item_atm.lua:290
+msgid "TRANSFERS"
+msgstr "TRANSFERÊNCIAS"
+
+#: api.lua:373 api.lua:429 api.lua:435 api.lua:460
+#, lua-format
+msgid "The '%s' parameter must be of the non-empty string type!"
+msgstr "O parâmetro '%s' deve ser do tipo de STRING não vazia!"
+
+#: api.lua:357 api.lua:379 api.lua:394 api.lua:441
+#, lua-format
+msgid "The '%s' parameter must be of the position type (x,y,z)!"
+msgstr "O parâmetro '%s' deve ser do tipo de POSITION (x,y,z)!"
+
+#: item_atm.lua:921
+#, lua-format
+msgid "The '%s' say to '%s': '%s'"
+msgstr "Correntista '%s' disse para '%s': '%s'"
+
+#: item_atm.lua:917
+#, lua-format
+msgid "The '%s' say: '%s'"
+msgstr "Correntista '%s' disse: '%s'"
+
+#: item_atm.lua:1114
+#, lua-format
+msgid "The ATM will only run %02d seconds after it is installed!"
+msgstr "O Caixa Eletrônico só vai funcionar %02d segundos depois de instalado!"
+
+#: item_dispensing_machine.lua:205
+msgid "The Dispensing Machine can not be removed before being emptied!"
+msgstr "A Máquina Dispensadora não pode ser retirada antes de ser esvaziada!"
+
+#: item_dispensing_machine.lua:306
+#, lua-format
+msgid "The Dispensing Machine with offer '%s' cannot deliver more items to '%s' because stock of '%s' is empty!"
+msgstr "A Máquina Dispensadora com oferta '%s' não é possível entregar mais itens para '%s' porque o estoque de '%s' acabou!"
+
+#: item_dispensing_machine.lua:313
+#, lua-format
+msgid "The Dispensing Machine with offer '%s' is out of space to receive customer item '%s'."
+msgstr "A Maquina Dispensadora com oferta '%s' está sem espaço suficiente para receber o item do cliente '%s'."
+
+#: item_dispensing_machine.lua:29
+msgid "The Machine Need"
+msgstr "Máquina Precisa"
+
+#: item_dispensing_machine.lua:32
+msgid "The Machine Offer"
+msgstr "Máquina Oferece"
+
+#: item_atm.lua:937
+#, lua-format
+msgid "The Transfer Proof was left on the floor because '%s' inventory has no free space."
+msgstr "A prova de transferência foi deixada no chão porque o inventário '%s' não tem espaço livre."
+
+#: item_atm.lua:949
+#, lua-format
+msgid "The bank account holder '%s' does not have enough balance to make this requested transfer."
+msgstr "O titular da conta bancária '%s' não tem saldo suficiente para fazer esta transferência solicitada."
+
+#: item_atm.lua:963
+#, fuzzy, lua-format
+msgid "The beneficiary '%s' does not have a current account with this bank."
+msgstr "O jogador '%s' não é titular de conta deste banco."
+
+#: api_payday.lua:61
+#, lua-format
+msgid "The city hall deposited the %2d° salary in your bank account!"
+msgstr "A prefeitura depositou o %2d° salário em sua conta bancária!"
+
+#: item_dispensing_machine.lua:324
+msgid "The dispending can not be done. Make sure you offer what the machine asks for!"
+msgstr "A dispensa não pode ser feita. Verifique se você ofereceu o que a Maquina Dispensadora pede!"
+
+#: item_atm.lua:31 item_atm.lua:47
+#, lua-format
+msgid "The file '%s' is not in table format!"
+msgstr "O arquivo '%s' não esta no formato de tabela!"
+
+#: item_atm.lua:866
+#, lua-format
+msgid "The maximum amount you can withdraw is: %02d minercash."
+msgstr "O valor máximo que você pode sacar é: %02d minercash."
+
+#: item_atm.lua:976
+#, fuzzy, lua-format
+msgid "There is no account holder '%s' in this bank."
+msgstr "O jogador '%s' não é titular de conta deste banco."
+
+#: item_atm.lua:212
+#, fuzzy
+msgid "Transfer Reason"
+msgstr "Motivo da Transferência"
+
+#: item_atm.lua:670 item_atm.lua:898
+msgid "Transfer for undeclared reason!"
+msgstr "Transferência por rasão não declarada!"
+
+#: item_atm.lua:930
+msgid "Transfer successful!"
+msgstr "Sucesso de transferência!"
+
+#: item_atm.lua:376 item_atm.lua:510 item_atm.lua:690
+msgid "VALUE"
+msgstr "VALOR"
+
+#: item_atm.lua:211
+msgid "Value"
+msgstr "Valor"
+
+#: item_atm.lua:376
+msgid "WHEN"
+msgstr "QUANDO"
+
+#: item_atm.lua:515
+msgid "WITHDRAWAL"
+msgstr "SAQUE"
+
+#: item_atm.lua:289
+msgid "WITHDRAWALS"
+msgstr "SAQUES"
+
+#: item_atm.lua:210
+msgid "When"
+msgstr "Quando"
+
+#: item_atm.lua:465
+msgid "Withdrawals in bank check."
+msgstr "Saque em Cheque Bancário."
+
+#: item_atm.lua:461
+msgid "Withdrawals in minercash."
+msgstr "Saque em minercash."
+
+#: item_dispensing_machine.lua:319
+msgid "Without enough space in Dispensing Machine to receive the seller's item. (Please, empty the receiving box!)"
+msgstr "Sem espaço suficiente na Maquina Dispensadora para receber o item do vendedor. (Por favor, esvazie a caixa de recebimento!)"
+
+#: item_atm.lua:673
+msgid "Write the 'beneficiary player name' and the 'value in minercash' that want to transfer!"
+msgstr "Escreva o 'nome do jogador beneficiário' e o 'valor em minercash' que deseja transferir!"
+
+#: item_atm.lua:502
+msgid "Write the value that want to withdrawal!"
+msgstr "Digite o valor que deseja sacar!"
+
+#: item_minercash.lua:104
+msgid "YELLOW MINERMONEY"
+msgstr "NOTA AMARELA"
+
+#: item_atm.lua:617
+msgid "YOUR BALANCE"
+msgstr "SEU SALDO"
+
+#: item_minercash.lua:369
+msgid "You can make money from it."
+msgstr "Você pode ganhar algum dinheiro com isso."
+
+#: item_dispensing_machine.lua:225
+msgid "You can not change your own machine!"
+msgstr "Você não pode trocar na sua própria maquina!"
+
+#: item_atm.lua:1082
+msgid "You can not install this 'ATM' too far from a 'Dispensing Machine'!"
+msgstr "Você não pode instalar este 'Caixa Eletrônico' muito longe de uma 'Máquina Dispensadora'!"
+
+#: item_atm.lua:569
+#, lua-format
+msgid "You deposited %02d x '%s'!"
+msgstr "Você depositou %02d x '%s'!"
+
+#: item_atm.lua:856
+msgid "You don't have space in your inventory to withdraw so much minercash."
+msgstr "Você não tem espaço em seu inventário para retirar tanto minercash."
+
+#: item_atm.lua:309 item_atm.lua:477 item_atm.lua:592 item_atm.lua:642
+#, lua-format
+msgid "You have %02d minercash."
+msgstr "Você tem %02d minercash."
+
+#: item_atm.lua:845
+#, lua-format
+msgid "You have withdrawn %02d minercash from your bank account."
+msgstr "Você sacou %02d minercash de sua conta bancária."
+
+#: item_dispensing_machine.lua:51
+msgid "You need"
+msgstr "Você Precisa"
+
+#: item_dispensing_machine.lua:53
+msgid "You offer"
+msgstr "Você Oferece"
+
+#: item_atm.lua:631
+msgid "Your Inventory"
+msgstr "Seu inventário"
+
+#: item_exchange_table.lua:9
+msgid "Your inventory"
+msgstr "Seu inventário"
+
+#: item_atm.lua:1133
+msgid "atm"
+msgstr "caixaeletronico"
+
+#: item_minercash.lua:362
+msgid "creditcard"
+msgstr "cartaodecredito"
+
+#: item_dispensing_machine.lua:346
+msgid "dispensingmachine"
+msgstr "dispensadora"
+
+#: item_exchange_table.lua:175
+msgid "exchangetable"
+msgstr "mesadetroca"
+
+#: item_minercash.lua:30
+msgid "minercoin"
+msgstr "minermoeda"

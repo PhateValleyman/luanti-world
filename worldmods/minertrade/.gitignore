@@ -1,0 +1,16 @@
+# Backup Files
+~*
+*.~
+*.old
+*.old*
+*.bkp
+*.bkp*
+*.backup
+*.backup*
+
+# Files of POedit
+*.mo
+
+# Arquivo de versionamento:
+*.diff
+*.patch

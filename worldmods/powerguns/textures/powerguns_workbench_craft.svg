@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="40mm"
+   height="40mm"
+   viewBox="0 0 40 40"
+   version="1.1"
+   id="svg996"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="powerguns_workbench_craft.svg"
+   inkscape:export-filename="powerguns_workbench_craft_disabled.png"
+   inkscape:export-xdpi="81.279999"
+   inkscape:export-ydpi="81.279999"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview998"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="true"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="4.5304435"
+     inkscape:cx="53.30604"
+     inkscape:cy="80.014242"
+     inkscape:window-width="2560"
+     inkscape:window-height="1360"
+     inkscape:window-x="0"
+     inkscape:window-y="48"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1" />
+  <defs
+     id="defs993" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path4"
+       inkscape:connector-curvature="0"
+       d="m 4.4635861,18.432105 0.5701436,-5.131292 4.9887583,-0.427608 0.427607,-1.567895 c 10.120049,0 17.588931,0.598651 24.345132,3.107283 l -0.285072,1.140287 1.026259,0.171043 -0.285072,2.565646 -1.453866,0.114029 -0.256565,1.026258 H 27.98201 l -1.852965,1.710431 H 21.510882 L 16.436603,28.69469 H 6.3735671 L 5.5753661,27.354853 C 6.7726676,25.444872 9.167271,21.62491 9.167271,20.769694 c 0,-1.396852 -0.7411862,-1.567895 -4.7036849,-2.337589 z m 7.7254459,8.039025 0.484623,0.798201 h 3.050268 l 4.133541,-6.414115 c -0.285071,-1.42536 -1.995502,-1.42536 -4.276076,-1.42536 l 0.712679,3.420861 -2.708182,0.427608 z"
+       style="fill:#ffffff;stroke-width:0.142536" />
+    <path
+       id="rect1284"
+       style="font-variation-settings:'wdth' 87, 'wght' 600;fill:#ff0000;stroke:none;stroke-width:0.14154;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.92549;stop-color:#000000"
+       d="M -0.03436277,-0.03436277 V 40.033987 H 40.033987 V -0.03436277 Z M 3.30505,3.30505 h 33.3901 v 33.3901 H 3.30505 Z" />
+    <rect
+       style="font-variation-settings:'wdth' 87, 'wght' 600;fill:#ff0000;stroke:none;stroke-width:0.1792;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.92549;stop-color:#000000"
+       id="rect1435"
+       width="3.3390415"
+       height="50.484798"
+       x="-1.5943714"
+       y="3.1554768"
+       transform="rotate(-45)" />
+  </g>
+</svg>

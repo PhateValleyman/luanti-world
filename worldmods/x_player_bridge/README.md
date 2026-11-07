@@ -1,0 +1,175 @@
+# X Player Bridge [x_player_bridge]
+
+[![ContentDB](https://content.luanti.org/packages/SaKeL/x_player_bridge/shields/title/)](https://content.luanti.org/packages/SaKeL/x_player_bridge/)
+[![ContentDB Downloads](https://content.luanti.org/packages/SaKeL/x_player_bridge/shields/downloads/)](https://content.luanti.org/packages/SaKeL/x_player_bridge/)
+![Luanti](https://img.shields.io/badge/Luanti-5.10%2B-5599ff.svg)
+[![Luacheck](https://img.shields.io/github/actions/workflow/status/sakel-hub/x_player_bridge/luacheck.yml?label=Luacheck&logo=lua)](https://github.com/sakel-hub/x_player_bridge/actions)
+[![License: LGPL 2.1](https://img.shields.io/badge/License-LGPL_v2.1-blue.svg)](license.txt)
+[![Media License: CC-BY 4.0](https://img.shields.io/badge/Media-CC_BY_4.0-lightgrey.svg)](license.txt)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/sakel-hub/x_player_bridge/pulls)
+![AI-Assisted](https://img.shields.io/badge/AI--assisted-gray)
+
+Showcase bridge mod providing seamless integration between `x_player_api`'s dual-model visual architecture and popular player equipment, skin, and weapon mods such as `3d_armor`, `wieldview`, `skinsdb`, and `shields`.
+
+> [!NOTE]
+> **Reference Implementation & Compatibility Showcase**  
+> `x_player_bridge` demonstrates how to leverage `x_player_api` to easily adapt various mods and achieve full compatibility with modern dual-format (`.glb` / `.b3d`) player visuals.  
+>  
+> The goal of this mod is **not** to permanently cover and inherit compatibility across all possible mods in the ecosystem. Instead, it serves as a modular reference showcase illustrating how other mod authors can implement direct `x_player_api` support and compatibility natively within their own mods.
+
+![x_player_bridge Rig Animation Showcase](screenshot.png)
+
+---
+
+## Overview
+
+`x_player_api` introduces an innovative dual-model architecture serving modern glTF multi-track animations (`.glb`) to Luanti 5.17.0+ clients while seamlessly falling back to legacy single-timeline Blitz3D models (`.b3d`) for older clients on the same multiplayer server.
+
+Because legacy ecosystem mods historically assume hardcoded `.b3d` meshes and single-timeline animation ranges, `x_player_bridge` was created as an official reference showcase demonstrating how to bridge existing player-related mods to `x_player_api`. It shows mod authors that adopting `x_player_api` support in their own mods is straightforward, while providing ready-to-use integrations that:
+- **Preserves Multi-Track GLB Animations**: Prevents `3d_armor` and other visual mods from clobbering glTF named animation tracks and GPU bone blending on modern clients.
+- **Synchronizes Dual Visual Proxies**: Automatically mirrors composited armor layers, skins, and textures across both `x_player_api:visual_glb` and `x_player_api:visual_b3d` child entities.
+- **Includes Armor & SkinsDB Character Models**: Bundles `3d_armor_character.glb` / `.b3d` and dedicated `skinsdb_3d_armor_character_5.glb` / `.b3d` dual-format models supporting 1.8 skin 3D outer layers (jackets, sleeves, pants) alongside canonical armor UV layout mapping.
+- **Prevents Render Conflicts**: Dynamically disables redundant 2D wieldview hand compositing when `x_player_api`'s native 3D wield items are active.
+- **Connects Combat Defenses**: Maps shield blocking mechanics (`shields` mod) into `x_player_api`'s upper-body defensive guard action (`block`).
+- **Native 1.8 3D Custom Model**: Provides `skinsdb_3d_armor_character_5.b3d` and `skinsdb_3d_armor_character_5.glb` with all 29 athletic animations, preserving 4-slot textures without flattening 1.8 outer voxel layers.
+- **Blueprint for Native Support**: Acts as a practical template for other mod authors to implement `x_player_api` support directly within their own repositories.
+
+---
+
+## Supported Integrations
+
+`x_player_bridge` organizes integrations into modular domains:
+
+### Equipment
+* **3D Armor (`equipment/3d_armor.lua`)**: Registers `3d_armor_character.b3d` as a dual-model definition (`mesh = "3d_armor_character.b3d"`, `mesh_glb = "3d_armor_character.glb"`). Inherits character animation tracks, eye heights, and hitboxes directly from `character.b3d` via `base_model = "character.b3d"`. Intercepts `armor:update_player_visuals` to ensure composited armor textures (helmet, chestplate, leggings, boots) are synchronized to both visual proxies without dropping multi-track animation states.
+* **Shields (`equipment/shields.lua`)**: Integrates shield defense mechanics into `x_player_api`'s action layer. When a player raises a shield to guard against incoming attacks, triggers the upper-body `block` action animation seamlessly while locomotion continues on the legs.
+
+### Wield & Items
+* **Wieldview (`wield/wieldview.lua`)**: When `x_player_api.enable_wield_item = true`, automatically suppresses legacy 2D hand texture compositing on the player model to eliminate z-fighting, flickering, and duplicate rendered items. Dynamically re-enables 2D compositing if 3D wield items are toggled off in settings.
+* **Wield3D & Visible Wielditem (`wield/wield3d.lua`)**: Coordinates with external 3D wield item entities (`wield3d`, `visible_wielditem`), suppressing redundant external attachment entities when `x_player_api` native 3D wield items are active.
+* **I Have Hands (`wield/i_have_hands.lua`)**: Bridges KingTheGuy's `i_have_hands` container carrying mechanics. Integrates semantic `carry` action evaluation and sets calibrated dual-arm bone overrides (`absolute = true`, elevation pitch, inward yaw, and palm roll) to lift hands up in front of the body holding chests and storage blocks across both GLB and B3D models without gait arm swinging.
+
+### Appearance & Skins
+* **SkinsDB (`appearance/skinsdb.lua`)**: Registers dedicated `skinsdb_3d_armor_character_5.b3d` and `skinsdb_3d_armor_character_5.glb` dual-format models with all 29 athletic animations from `x_player_api`. Fully supports modern 1.8 skins with 3D outer layers (jackets, sleeves, pants) alongside 1.0 skins, capes, clothing overlays, and 3D armor by preserving the native 4-slot texture architecture. When non-skinsdb models are used, seamlessly falls back to canonical 3-slot texture normalization.
+* **Simple Skins (`appearance/simple_skins.lua`)**: Synchronizes selected character skins directly to both visual proxies upon player join and skin change.
+* **Clothing (`appearance/clothing.lua`)**: Preserves and composites wardrobe clothing layers across proxy entities.
+
+### Combat
+* **Bows (`combat/bows.lua`)**: Maps external bow drawing states into `x_player_api`'s `bow_aim` and `bow_shoot` action animations.
+
+### Locomotion
+* **Stamina (`locomotion/stamina.lua`)**: Synchronizes stamina sprinting states with `x_player_api` sprint locomotion and exhaustion. Dynamically reads `stamina.sprint_aux` and `stamina.sprint` settings, auto-disabling AUX1 sprint when stamina frees AUX1 for other uses (such as jetpacks).
+* **Sprinting & Flight (`locomotion/sprinting.lua`)**: Coordinates third-party sprinting and flight equipment mods (`sprinting` by xXOsielXx, `sprint` by GunshipPenguin, `sprint_lite`, `hbsprint`, and `sum_jetpack`). Automatically synchronizes AUX1 configuration (`sprinting_use_aux1 = false`, `SPRINT_METHOD = 0`), tracks runtime sprint and stamina exhaustion states, and ensures airborne jetpack flight and descent display hover locomotion instead of sprint strides or prone flight.
+* **Hangglider (`locomotion/hangglider.lua`)**: Bridges glider deployment to the `glide` animation state and adjusts player visual pitch during flight.
+* **FlySwim Compat (`locomotion/flyswim_compat.lua`)**: Ensures crawl and swim animation states cooperate smoothly with 3D armor models.
+* **Carts (`locomotion/carts.lua`)**: Preserves upright standing posture when riding in minecarts (`carts:cart`) and rail vehicles instead of forcing sitting animations.
+
+### Social
+* **Emote (`social/emote.lua`)**: Connects chat and button emote commands (`wave`, `point`, `cheer`, `cry`, etc.) to glTF multi-track gestures.
+
+---
+
+## 3D Models & Locked-Foot Bow Animation
+
+`x_player_bridge` bundles custom-rigged 3D character models in `models/` with standard 6-bone armatures and 3D Armor UV unwrapping:
+- **`models/3d_armor_character.glb`**: Binary glTF 2.0 multi-track character model with separate bone-masked animation channels.
+  - **Calibrated Bow Animation**: The `bow` animation track keeps pelvis root translation locked at `(0, 0, 0)` while counter-rotating leg bones by `+30°`. When bowing, the character's upper body bends respectfully while both feet remain firmly anchored to the floor without shifting, sliding, or hovering.
+- **`models/3d_armor_character.b3d`**: Legacy Blitz3D single-timeline model for older client compatibility.
+- **`assets/3d_armor_character.blend`**: Master Blender authoring file.
+
+---
+
+## Configuration Settings
+
+Each integration can be independently enabled or disabled via the in-game Settings menu (**Settings -> All Settings -> Mods -> x_player_bridge**) or directly in `luanti.conf`:
+
+| Setting | Type | Default | Description |
+|---|---|---|---|
+| `x_player_bridge.enable_3d_armor` | bool | `true` | Enable `3d_armor` dual-model registration and texture interception |
+| `x_player_bridge.enable_shields` | bool | `true` | Enable `shields` defensive blocking action mapping |
+| `x_player_bridge.enable_wieldview` | bool | `true` | Enable `wieldview` 2D compositing suppression hook |
+| `x_player_bridge.enable_wield3d` | bool | `true` | Enable `wield3d` and `visible_wielditem` external entity suppression |
+| `x_player_bridge.enable_i_have_hands` | bool | `true` | Enable `i_have_hands` container carrying posture and dual-model synchronization |
+| `x_player_bridge.enable_skinsdb` | bool | `true` | Enable `skinsdb` 1.8 3D custom model and 4-slot texture integration |
+| `x_player_bridge.enable_simple_skins` | bool | `true` | Enable `simple_skins` proxy texture synchronization |
+| `x_player_bridge.enable_clothing` | bool | `true` | Enable `clothing` proxy layer synchronization |
+| `x_player_bridge.enable_bows` | bool | `true` | Enable `bows` aiming and shooting animation mapping |
+| `x_player_bridge.enable_stamina` | bool | `true` | Enable `stamina` sprinting and exhaustion synchronization |
+| `x_player_bridge.enable_sprinting` | bool | `true` | Enable third-party sprinting mods and AUX1 synchronization |
+| `x_player_bridge.enable_hangglider` | bool | `true` | Enable `hangglider` gliding flight state integration |
+| `x_player_bridge.enable_flyswim_compat` | bool | `true` | Enable swim and crawl animation compatibility |
+| `x_player_bridge.enable_carts` | bool | `true` | Enable minecart standing posture integration |
+| `x_player_bridge.enable_emote` | bool | `true` | Enable `emote` gesture trigger integration |
+
+Example `luanti.conf`:
+```conf
+# Disable 3D Armor bridge if 3d_armor implements x_player_api directly
+x_player_bridge.enable_3d_armor = true
+
+# Disable Wieldview bridge
+x_player_bridge.enable_wieldview = true
+
+# Disable SkinsDB bridge
+x_player_bridge.enable_skinsdb = true
+
+# Enable Shields bridge
+x_player_bridge.enable_shields = true
+```
+
+---
+
+## Testing & Quality Assurance
+
+`x_player_bridge` includes a modular BDD unit test suite verifying all bridge hooks, lifecycle events, and binary GLB animation curve constraints.
+
+### Static Analysis
+```bash
+luacheck .
+```
+
+### Running Tests
+To run the automated test suite locally:
+```bash
+lua test.lua
+```
+
+### Verified Test Matrix
+- `3d_armor` integration loading and player visual texture synchronization.
+- Player reconnect inventory and visual state restoration.
+- GLB mesh and multi-track animation retention when `3d_armor` registers before bridge.
+- Dynamic 2D wieldview compositing suppression when 3D wield items are active.
+- `skinsdb` 1.8 3D custom dual-model registration and 4-slot texture preservation.
+- `shields` blocking predicate registration.
+- Disabling integrations via configuration settings.
+- Binary GLB curve evaluation confirming `3d_armor_character.glb` keeps `Body` translation locked to zero and counter-rotates legs during the bow animation.
+
+---
+
+## Installation
+
+### From ContentDB
+Search for **X Player Bridge** in the Luanti online content repository and click **Install**.
+
+### From Git
+Clone into your Luanti `mods/` directory:
+```bash
+git clone https://github.com/sakel-hub/x_player_bridge.git
+```
+
+Ensure `x_player_api` is installed and enabled in your world.
+
+---
+
+## AI Transparency & Assistance Statement
+
+This package adheres to an **AI-Assisted** development model under strict human authorship and editorial control:
+
+- **Human Creative Authority & Codebase**: All software architecture, gameplay mechanics, core algorithms, and mod logic are authored, designed, and directed by a human developer.
+- **Administrative & Tooling Scope**: AI tools are utilized strictly in an auxiliary capacity for administrative workflows, repository maintenance (e.g., changelogs, commit formatting), documentation drafting, and test-case structuring.
+- **Zero Synthetic Media**: Generative AI is **not** used to produce textures, sprites, 3D meshes/models, audio, or visual assets. All media files are created or attributed to original human artists under valid open licenses.
+- **Verification & Responsibility**: Every line of code, configuration, and documentation is manually inspected, tested, and validated by the maintainer, who retains full copyright and legal responsibility for the package.
+
+## License
+
+- **Code**: LGPL-2.1-or-later (see `license.txt`)
+- **Media & Models**: CC-BY-4.0 (see `license.txt`)

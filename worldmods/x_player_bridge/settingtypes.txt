@@ -1,0 +1,27 @@
+# Settings for x_player_bridge
+
+# Equipment & Visuals
+x_player_bridge.enable_3d_armor (Enable 3D Armor dual-model integration) bool true
+x_player_bridge.enable_shields (Enable Shields defense block posture integration) bool true
+x_player_bridge.enable_wieldview (Enable Wieldview 2D hand texture suppression) bool true
+x_player_bridge.enable_wield3d (Enable Wield3D and visible_wielditem suppression) bool true
+x_player_bridge.enable_i_have_hands (Enable I Have Hands container carrying posture and dual-model synchronization) bool true
+
+# Appearance & Skins
+x_player_bridge.enable_skinsdb (Enable SkinsDB model redirect integration) bool true
+x_player_bridge.enable_simple_skins (Enable Simple Skins texture synchronization) bool true
+x_player_bridge.enable_clothing (Enable Clothing layered composite integration) bool true
+
+# Combat & Archery
+x_player_bridge.enable_bows (Enable Bows charging and shooting action integration) bool true
+
+# Locomotion & Physics
+x_player_bridge.enable_stamina (Enable Stamina sprint and exhaustion synchronization) bool true
+x_player_bridge.enable_sprinting (Enable Sprinting mods compatibility and AUX1 synchronization) bool true
+x_player_bridge.enable_hangglider (Enable Hangglider aerodynamic flight posture) bool true
+x_player_bridge.enable_flyswim_compat (Enable 3D Armor Flyswim model redirect compat) bool true
+x_player_bridge.enable_carts (Enable Carts standing posture integration) bool true
+x_player_bridge.enable_mcl_cozy (Enable mcl_cozy and mcl_decor sitting and laying posture integration) bool true
+
+# Social & Emotes
+x_player_bridge.enable_emote (Enable Emote mod multi-track action mapping) bool true
