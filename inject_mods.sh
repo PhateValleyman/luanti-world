@@ -1,78 +1,134 @@
-#!/data/data/com.termux/files/usr/bin/bash
+#!/usr/bin/env bash
+set -Eeuo pipefail
 
-WORLD="/storage/emulated/0/Android/data/net.minetest.minetest/files/Minetest/worlds/default"
-MODS="/storage/emulated/0/Android/data/net.minetest.minetest/files/Minetest/mods"
+# Allow callers to override paths without editing this script.
+WORLD="${MINETEST_WORLD:-/storage/emulated/0/Android/data/net.minetest.minetest/files/Minetest/worlds/default}"
+MODS="${MINETEST_MODS:-/storage/emulated/0/Android/data/net.minetest.minetest/files/Minetest/mods}"
 WORLDMODS="$WORLD/worldmods"
 
-[ -f "$WORLD/world.mt" ] || { echo "CHYBA: chybí $WORLD/world.mt"; exit 1; }
-[ -d "$MODS" ]           || { echo "CHYBA: chybí $MODS"; exit 1; }
+if [[ ! -f "$WORLD/world.mt" ]]; then
+	printf 'ERROR: Missing world configuration: %s\n' "$WORLD/world.mt" >&2
+	exit 1
+fi
+
+if [[ ! -d "$MODS" ]]; then
+	printf 'ERROR: Mod directory does not exist: %s\n' "$MODS" >&2
+	exit 1
+fi
 
 mkdir -p "$WORLDMODS"
 
-# groups[top_folder]=1  – kopírujeme vždy celou top-level složku z mods/
-declare -A groups
+declare -A groups=()
+shopt -s nullglob
 
-while IFS= read -r line; do
-    line="${line%$'\r'}"
-    # přeskoč prázdné a komentáře
-    [[ -z "$line" || "$line" == \#* ]] && continue
+while IFS= read -r line || [[ -n "$line" ]]; do
+	line="${line%$'\r'}"
 
-    # zachyť "load_mod_NAME = HODNOTA"
-    [[ "$line" =~ ^load_mod_([A-Za-z0-9_]+)[[:space:]]*=[[:space:]]*(.+)$ ]] || continue
-    name="${BASH_REMATCH[1]}"
-    value="${BASH_REMATCH[2]}"
-    # ořízni trailing whitespace
-    value="${value%"${value##*[![:space:]]}"}"
+	# Ignore blank lines and comments.
+	[[ "$line" =~ ^[[:space:]]*$ || "$line" =~ ^[[:space:]]*# ]] && continue
 
-    # vypnuté mody
-    [ "$value" = "false" ] && continue
+	# Read enabled mod entries from world.mt.
+	[[ "$line" =~ ^[[:space:]]*load_mod_([A-Za-z0-9_]+)[[:space:]]*=[[:space:]]*(.*)$ ]] || continue
+	name="${BASH_REMATCH[1]}"
+	value="${BASH_REMATCH[2]}"
+	value="${value#" ${value%%[![:space:]]*}"}"
+	value="${value%"${value##*[![:space:]]}"}"
 
-    # tvar "true" – hledej podle jména
-    if [ "$value" = "true" ]; then
-        found=""
-        if [ -d "$MODS/$name" ]; then
-            found="$name"
-        else
-            for d in "$MODS"/*/; do
-                d="${d%/}"
-                [ -d "$d/$name" ] && { found="$(basename "$d")"; break; }
-            done
-        fi
-        if [ -z "$found" ]; then
-            echo "  ! '$name' nenalezen"
-        else
-            groups["$found"]=1
-        fi
-        continue
-    fi
+	# Skip explicitly disabled mods.
+	[[ "$value" == "false" ]] && continue
 
-    # tvar "mods/..." – relativní cesta pod Minetest/mods
-    if [[ "$value" == mods/* ]]; then
-        rest="${value#mods/}"
-        top="${rest%%/*}"
-        groups["$top"]=1
-    else
-        echo "  ? neznámý formát: load_mod_$name = $value"
-    fi
+	if [[ "$value" == "true" ]]; then
+		found=""
+
+		if [[ -d "$MODS/$name" && ! -L "$MODS/$name" ]]; then
+			found="$name"
+		else
+			for directory in "$MODS"/*/; do
+				directory="${directory%/}"
+				if [[ -d "$directory/$name" ]]; then
+					found="$(basename "$directory")"
+					break
+				fi
+			done
+		fi
+
+		if [[ -z "$found" ]]; then
+			printf 'WARN: Enabled mod not found: %s\n' "$name" >&2
+		else
+			groups["$found"]=1
+		fi
+		continue
+	fi
+
+	if [[ "$value" == mods/* ]]; then
+		relative="${value#mods/}"
+		top="${relative%%/*}"
+
+		# Reject unsafe paths before using them as directory names.
+		if [[ -z "$top" || "$top" == "." || "$top" == ".." || "$top" == *".."* ]]; then
+			printf 'WARN: Unsafe mod path ignored: %s\n' "$value" >&2
+			continue
+		fi
+
+		groups["$top"]=1
+	else
+		printf 'WARN: Unsupported mod path ignored: load_mod_%s = %s\n' "$name" "$value" >&2
+	fi
 done < "$WORLD/world.mt"
 
-if [ ${#groups[@]} -eq 0 ]; then
-    echo "Nenalezeny žádné zapnuté mody v world.mt."; exit 0
+if (( ${#groups[@]} == 0 )); then
+	printf 'INFO: No enabled mod entries found in %s/world.mt\n' "$WORLD"
+	exit 0
 fi
 
-echo "Kopíruji ${#groups[@]} položek do: $WORLDMODS"
-for g in "${!groups[@]}"; do
-    src="$MODS/$g"
-    if [ ! -d "$src" ]; then
-        echo "  ! '$g' neexistuje v $MODS – přeskakuji"
-        continue
-    fi
-    echo "  + $g"
-    rm -rf "$WORLDMODS/$g"
-    cp -r "$src" "$WORLDMODS/$g"
+backup_root="$WORLD/.worldmods-backup/$(date +%Y%m%d-%H%M%S)-$$"
+stage_dirs=()
+
+# Remove only temporary staging directories created by this run.
+cleanup() {
+	local directory
+	for directory in "${stage_dirs[@]}"; do
+		[[ -n "$directory" && -d "$directory" ]] && rm -rf -- "$directory"
+	done
+}
+trap cleanup EXIT
+
+mkdir -p "$backup_root"
+
+printf 'INFO: Preparing %d mod directories for %s\n' "${#groups[@]}" "$WORLDMODS"
+
+for group in "${!groups[@]}"; do
+	source_dir="$MODS/$group"
+	destination="$WORLDMODS/$group"
+
+	if [[ ! -d "$source_dir" || -L "$source_dir" ]]; then
+		printf 'WARN: Source directory missing or is a symlink: %s\n' "$source_dir" >&2
+		continue
+	fi
+
+	stage="$(mktemp -d "$WORLDMODS/.stage.XXXXXX")"
+	stage_dirs+=("$stage")
+
+	# Copy into a separate directory before touching the current mod.
+	cp -a -- "$source_dir/." "$stage/"
+
+	if [[ -e "$destination" || -L "$destination" ]]; then
+		mkdir -p "$backup_root"
+		if ! mv -- "$destination" "$backup_root/$group"; then
+			printf 'ERROR: Could not back up existing mod: %s\n' "$destination" >&2
+			exit 1
+		fi
+	fi
+
+	if ! mv -- "$stage" "$destination"; then
+		printf 'ERROR: Could not install staged mod: %s\n' "$destination" >&2
+		if [[ -e "$backup_root/$group" || -L "$backup_root/$group" ]]; then
+			mv -- "$backup_root/$group" "$destination"
+		fi
+		exit 1
+	fi
+
+	printf 'OK: %s\n' "$group"
 done
 
-echo
-echo "Hotovo."
-echo "Zkopírováno:"
-ls -1 "$WORLDMODS"
+printf 'INFO: Mod injection finished. Previous versions, if any, are in: %s\n' "$backup_root"
