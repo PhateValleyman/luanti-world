@@ -6,4 +6,4 @@ backend = sqlite3
 gameid = minetest
 creative_mode = true
 world_name = default
-server_announce = true
+server_announce = false
