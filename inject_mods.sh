@@ -4,6 +4,11 @@ WORLD="${WORLD:-/storage/emulated/0/Android/data/net.minetest.minetest/files/Min
 MODS="${MODS:-/storage/emulated/0/Android/data/net.minetest.minetest/files/Minetest/mods}"
 WORLDMODS="$WORLD/worldmods"
 
+# Operation notes:
+# Run only while no other process modifies this world; the symlink check rejects only a link already present.
+# Previous groups are kept until the full batch installs; an install failure rolls back the batch if rollback operations succeed.
+# If rollback itself fails, the script reports the error and preserves its temporary recovery directory under WORLD.
+
 fail() {
     printf 'CHYBA: %s\n' "$*" >&2
     exit 1
