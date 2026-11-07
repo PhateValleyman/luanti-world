@@ -131,6 +131,40 @@ fi
 assert_no_stage_dirs "$world"
 pass "install failure rolls back to the old mod"
 
+# Simulate failure while installing the second group and verify the whole batch is rolled back.
+world="$TMP_ROOT/multi-move-failure/world"
+mods="$TMP_ROOT/multi-move-failure/mods"
+mock_bin="$TMP_ROOT/multi-move-failure/bin"
+mkdir -p "$world/worldmods/alpha" "$world/worldmods/bravo" "$mods/alpha" "$mods/bravo" "$mock_bin"
+printf 'old alpha\n' > "$world/worldmods/alpha/version.txt"
+printf 'new alpha\n' > "$mods/alpha/version.txt"
+printf 'old bravo\n' > "$world/worldmods/bravo/version.txt"
+printf 'new bravo\n' > "$mods/bravo/version.txt"
+printf 'load_mod_alpha = mods/alpha\nload_mod_bravo = mods/bravo\n' > "$world/world.mt"
+export MV_COUNT_FILE="$TMP_ROOT/multi-move-failure/mv-count"
+export MV_FAIL_ON=4
+cat > "$mock_bin/mv" <<'EOF'
+#!/bin/sh
+count=0
+if [ -f "$MV_COUNT_FILE" ]; then
+    read -r count < "$MV_COUNT_FILE"
+fi
+count=$((count + 1))
+printf '%s\n' "$count" > "$MV_COUNT_FILE"
+if [ "$count" -eq "$MV_FAIL_ON" ]; then
+    exit 1
+fi
+exec "$REAL_MV" "$@"
+EOF
+chmod +x "$mock_bin/mv"
+if PATH="$mock_bin:$PATH" WORLD="$world" MODS="$mods" bash "$SCRIPT" > "$TMP_ROOT/multi-move-failure.log" 2>&1; then
+    fail "second-group install failure was ignored"
+fi
+[[ "$(cat "$world/worldmods/alpha/version.txt")" == 'old alpha' ]] || fail "first group remained updated after second-group failure"
+[[ "$(cat "$world/worldmods/bravo/version.txt")" == 'old bravo' ]] || fail "second group was not restored after failed install"
+assert_no_stage_dirs "$world"
+pass "second-group failure rolls back the whole batch"
+
 # Ensure the repository world keeps creative mode enabled exactly once.
 creative_count="$(grep -Ec '^[[:space:]]*creative_mode[[:space:]]*=' "$ROOT/world.mt" || true)"
 [[ "$creative_count" == 1 ]] || fail "world.mt must contain exactly one creative_mode setting"

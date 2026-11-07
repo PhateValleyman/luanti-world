@@ -69,32 +69,77 @@ if (( ${#groups[@]} == 0 )); then
     exit 0
 fi
 
+# This refuses a pre-existing symlink; the world directory must remain single-writer during execution.
 [[ ! -L "$WORLDMODS" ]] || fail "Odmítám zapisovat přes symbolický odkaz worldmods: $WORLDMODS"
 mkdir -p -- "$WORLDMODS" || fail "Nelze vytvořit adresář worldmods: $WORLDMODS"
 stage_root="$(mktemp -d "$WORLD/.inject-mods.XXXXXX")" || fail "Nelze vytvořit dočasný adresář v: $WORLD"
-active_target=""
-active_backup=""
+
+ordered_groups=()
+while IFS= read -r group; do
+    ordered_groups+=("$group")
+done < <(printf '%s\n' "${!groups[@]}" | LC_ALL=C sort)
+
+declare -a transaction_groups=()
+declare -a transaction_had_previous=()
+commit_complete=0
+
+rollback_transaction() {
+    local failed=0
+    local index group had_previous target_dir backup_dir
+
+    for ((index = ${#transaction_groups[@]} - 1; index >= 0; index--)); do
+        group="${transaction_groups[index]}"
+        had_previous="${transaction_had_previous[index]}"
+        target_dir="$WORLDMODS/$group"
+        backup_dir="$stage_root/$group.previous"
+
+        if (( had_previous )); then
+            if [[ -e "$backup_dir" || -L "$backup_dir" ]]; then
+                if [[ -e "$target_dir" || -L "$target_dir" ]]; then
+                    if ! rm -rf -- "$target_dir"; then
+                        printf 'CHYBA: nelze odstranit novou verzi při návratu: %s\n' "$group" >&2
+                        failed=1
+                        continue
+                    fi
+                fi
+                if ! mv -- "$backup_dir" "$target_dir"; then
+                    printf 'CHYBA: nelze obnovit původní skupinu: %s\n' "$group" >&2
+                    failed=1
+                fi
+            elif [[ ! -e "$target_dir" && ! -L "$target_dir" ]]; then
+                printf 'CHYBA: chybí původní skupina i její záloha: %s\n' "$group" >&2
+                failed=1
+            fi
+        elif [[ -e "$target_dir" || -L "$target_dir" ]]; then
+            if ! rm -rf -- "$target_dir"; then
+                printf 'CHYBA: nelze odstranit novou skupinu při návratu: %s\n' "$group" >&2
+                failed=1
+            fi
+        fi
+    done
+
+    return "$failed"
+}
 
 cleanup() {
     local status=$?
     local keep_stage=0
     trap - EXIT INT TERM
 
-    if [[ -n "$active_backup" && ( -e "$active_backup" || -L "$active_backup" ) ]]; then
-        if [[ ! -e "$active_target" && ! -L "$active_target" ]]; then
-            if mv -- "$active_backup" "$active_target"; then
-                active_backup=""
-            else
-                printf 'CHYBA: obnovení selhalo; záloha zůstala v %s\n' "$active_backup" >&2
-                keep_stage=1
-            fi
-        fi
+    if (( status != 0 && commit_complete == 0 )); then
+        rollback_transaction || keep_stage=1
     fi
 
     if (( keep_stage == 0 )); then
-        rm -rf -- "$stage_root"
-    else
-        printf 'Dočasný adresář se zálohou zůstává: %s\n' "$stage_root" >&2
+        if ! rm -rf -- "$stage_root"; then
+            printf 'CHYBA: nelze odstranit dočasná data: %s\n' "$stage_root" >&2
+            keep_stage=1
+            (( status == 0 )) && status=1
+        fi
+    fi
+
+    if (( keep_stage )); then
+        printf 'Obnovovací data ponechána v: %s\n' "$stage_root" >&2
     fi
     exit "$status"
 }
@@ -103,42 +148,36 @@ trap cleanup EXIT
 trap 'exit 130' INT
 trap 'exit 143' TERM
 
-printf 'Kopíruji %d skupin modů do: %s\n' "${#groups[@]}" "$WORLDMODS"
-while IFS= read -r group; do
+# Stage every source before replacing any installed mod group.
+for group in "${ordered_groups[@]}"; do
     source_dir="$MODS/$group"
-    target_dir="$WORLDMODS/$group"
-
-    if [[ ! -d "$source_dir" ]]; then
-        printf 'UPOZORNĚNÍ: skupina modů nebyla nalezena, přeskakuji: %s\n' "$source_dir" >&2
-        continue
-    fi
+    [[ -d "$source_dir" ]] || fail "Zdrojová skupina modů chybí: $source_dir"
 
     staged_dir="$stage_root/$group.new"
     mkdir -p -- "$staged_dir" || fail "Nelze připravit skupinu modů: $group"
     cp -a -- "$source_dir/." "$staged_dir/" || fail "Kopírování skupiny modů selhalo: $group"
+done
+
+printf 'Kopíruji %d skupin modů do: %s\n' "${#ordered_groups[@]}" "$WORLDMODS"
+for group in "${ordered_groups[@]}"; do
+    target_dir="$WORLDMODS/$group"
+    backup_dir="$stage_root/$group.previous"
+    staged_dir="$stage_root/$group.new"
+    had_previous=0
 
     if [[ -e "$target_dir" || -L "$target_dir" ]]; then
-        active_target="$target_dir"
-        active_backup="$stage_root/$group.previous"
-        mv -- "$target_dir" "$active_backup" || fail "Nelze zachovat stávající skupinu modů: $group"
+        had_previous=1
+    fi
+    transaction_groups+=("$group")
+    transaction_had_previous+=("$had_previous")
+
+    if (( had_previous )); then
+        mv -- "$target_dir" "$backup_dir" || fail "Nelze zachovat stávající skupinu modů: $group"
     fi
 
-    if ! mv -- "$staged_dir" "$target_dir"; then
-        if [[ -n "$active_backup" ]]; then
-            mv -- "$active_backup" "$active_target" || fail "Instalace i návrat původní skupiny modů selhaly: $group"
-            active_backup=""
-            active_target=""
-        fi
-        fail "Nelze nainstalovat skupinu modů: $group"
-    fi
-
-    if [[ -n "$active_backup" ]]; then
-        rm -rf -- "$active_backup" || fail "Nelze odstranit zálohu nahrazené skupiny modů: $group"
-        active_backup=""
-        active_target=""
-    fi
-
+    mv -- "$staged_dir" "$target_dir" || fail "Nelze nainstalovat skupinu modů: $group"
     printf '  + %s\n' "$group"
-done < <(printf '%s\n' "${!groups[@]}" | LC_ALL=C sort)
+done
 
+commit_complete=1
 printf 'Hotovo.\n'
