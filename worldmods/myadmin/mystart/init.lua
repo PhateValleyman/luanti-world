@@ -1,6 +1,7 @@
 local modname = minetest.get_current_modname()
 local modpath = minetest.get_modpath(modname)
 local formname = "mystart:rules"
+local accepted_key = "mystart:rules_accepted"
 
 local rules_file = io.open(modpath .. "/rules.txt", "r")
 local rules_text
@@ -30,12 +31,18 @@ local function show_rules(player)
 end
 
 minetest.register_on_joinplayer(function(player)
+	local meta = player:get_meta()
+	if meta:get_string(accepted_key) == "true" then
+		return
+	end
+
+	-- Remove interaction until the player explicitly accepts the rules.
 	local player_name = player:get_player_name()
 	local privileges = minetest.get_player_privs(player_name)
+	privileges.interact = nil
+	minetest.set_player_privs(player_name, privileges)
 
-	if not privileges.interact then
-		show_rules(player)
-	end
+	show_rules(player)
 end)
 
 minetest.register_on_player_receive_fields(function(player, received_formname, fields)
@@ -52,6 +59,7 @@ minetest.register_on_player_receive_fields(function(player, received_formname, f
 		privileges.home = true
 		privileges.fast = true
 		privileges.creative = true
+		player:get_meta():set_string(accepted_key, "true")
 		minetest.set_player_privs(player_name, privileges)
 		minetest.chat_send_player(player_name, "Rules accepted. Creative mode is enabled.")
 		return true
