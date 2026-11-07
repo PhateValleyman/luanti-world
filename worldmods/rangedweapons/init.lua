@@ -154,6 +154,7 @@ end
 
 function rangedweapons_single_load_gun(itemstack, player)
 	local GunCaps = itemstack:get_definition().RW_gun_capabilities
+	local gun_unload_sound = ""
 
 	if GunCaps ~= nil then
 		gun_unload_sound = GunCaps.gun_unload_sound or ""
@@ -517,7 +518,7 @@ function rangedweapons_shoot_powergun(itemstack, player)
 		local inv = player:get_inventory()
 		local playerMeta = player:get_meta()
 
-		if inv:contains_item("main", "rangedweapons:power_particle " .. PowerCaps.power_consumption) and playerMeta:get_float("rw_cooldown") <= 0 then
+		if PowerCaps and inv:contains_item("main", "rangedweapons:power_particle " .. PowerCaps.power_consumption) and playerMeta:get_float("rw_cooldown") <= 0 then
 			playerMeta:set_float("rw_cooldown", power_cooldown)
 
 			local OnCollision = function() end
@@ -654,40 +655,43 @@ function rangedweapons_launch_projectile(player, projNum, projDmg, projEnt,
 		local projectiles = projNum or 1
 		for i = 1, projectiles do
 			local obj = core.add_entity(pos, projEnt)
-			local ent = obj:get_luaentity()
-
-			obj:set_properties({
-				textures = {texture},
-				visual = visualType,
-				collisionbox = {-size,-size,-size, size,size,size},
-				glow = proj_glow
-			})
-			ent.owner = player:get_player_name()
 			if obj then
-				ent.damage = projDmg
-				ent.crit = projCrit
-				ent.critEffc = projCritEffc
-				ent.OnCollision = ColResult
-				ent.mobPen = mobPen
-				ent.nodePen = nodePen
-				ent.dps = dps
-				ent.door_break = door_break
-				ent.glass_break = glass_break
-				ent.skill_value = skill_value
-				ent.bullet_particles = bullet_particles
-				ent.sparks = sparks
-				ent.ignite = ignite
-				ent.size = size
-				ent.timer = 0 + (combined_velocity/2000)
-				ent.wear = proj_wear
-				local acc = (((100 - accuracy ) / 10) / skill_value) or 0
-				obj:set_velocity({
-					x = dir.x * combined_velocity + math.random(-acc, acc),
-					y = dir.y * combined_velocity + math.random(-acc, acc),
-					z = dir.z * combined_velocity + math.random(-acc, acc)
-				})
-				obj:set_acceleration({x = 0, y = -gravity, z = 0})
-				obj:set_rotation({x = 0, y = yaw - math.pi / 2, z = -svertical})
+				local ent = obj:get_luaentity()
+				if ent then
+					obj:set_properties({
+						textures = {texture},
+						visual = visualType,
+						collisionbox = {-size,-size,-size, size,size,size},
+						glow = proj_glow
+					})
+					ent.owner = player:get_player_name()
+					ent.damage = projDmg
+					ent.crit = projCrit
+					ent.critEffc = projCritEffc
+					ent.OnCollision = ColResult
+					ent.mobPen = mobPen
+					ent.nodePen = nodePen
+					ent.dps = dps
+					ent.door_break = door_break
+					ent.glass_break = glass_break
+					ent.skill_value = skill_value
+					ent.bullet_particles = bullet_particles
+					ent.sparks = sparks
+					ent.ignite = ignite
+					ent.size = size
+					ent.timer = combined_velocity / 2000
+					ent.wear = proj_wear
+					local acc = (((100 - accuracy) / 10) / skill_value) or 0
+					obj:set_velocity({
+						x = dir.x * combined_velocity + math.random(-acc, acc),
+						y = dir.y * combined_velocity + math.random(-acc, acc),
+						z = dir.z * combined_velocity + math.random(-acc, acc)
+					})
+					obj:set_acceleration({x = 0, y = -gravity, z = 0})
+					obj:set_rotation({x = 0, y = yaw - math.pi / 2, z = -svertical})
+				else
+					obj:remove()
+				end
 			end
 		end
 	end
@@ -711,21 +715,18 @@ function eject_shell(itemstack, player, rld_item, rld_time, rldsound, shell)
 	if pos and dir and yaw then
 		pos.y = pos.y + 1.6
 		local obj = core.add_entity(pos, "rangedweapons:empty_shell")
-
-		if bulletStack ~= "" then
-			local AmmoCaps = bulletStack:get_definition().RW_ammo_capabilities
-
-			local bullet_shell_visual = "wielditem"
-			local bullet_shell_texture = "rangedweapons:shelldrop"
-
-			bullet_shell_visual = AmmoCaps.shell_visual or "wielditem"
-			bullet_shell_texture = AmmoCaps.shell_texture or "rangedweapons:shelldrop"
-
-			obj:set_properties({textures = {bullet_shell_texture}})
-			obj:set_properties({visual = bullet_shell_visual})
-		end
-
 		if obj then
+			if bulletStack ~= "" then
+				local ammo_caps = bulletStack:get_definition().RW_ammo_capabilities
+				local bullet_shell_visual = ammo_caps and ammo_caps.shell_visual or "wielditem"
+				local bullet_shell_texture = ammo_caps and ammo_caps.shell_texture or "rangedweapons:shelldrop"
+
+				obj:set_properties({
+					textures = {bullet_shell_texture},
+					visual = bullet_shell_visual
+				})
+			end
+
 			obj:set_velocity({x = dir.x * -10, y = dir.y * -10, z = dir.z * -10})
 			obj:set_acceleration({x = dir.x * -5, y = -10, z = dir.z * -5})
 			obj:set_yaw(yaw - math.pi / 2)

@@ -1,86 +1,100 @@
 local S = minetest.get_translator("rangedweapons")
+
 local skill_list = {
-	{id="handgun_skill",name="Handgun"},
-	{id="mp_skill",name="Machine Pistol"},
-	{id="smg_skill",name="S.M.G."},
-	{id="shotgun_skill",name="Shotgun"},
-	{id="heavy_skill",name="Heavy MG"},
-	{id="arifle_skill",name="A.Rifle"},
-	{id="revolver_skill",name="Revolver/magnum"},
-	{id="rifle_skill",name="Rifle"},
-	{id="throw_skill",name="Throwing weapons"},
+	{id = "handgun_skill", name = "Handgun"},
+	{id = "mp_skill", name = "Machine Pistol"},
+	{id = "smg_skill", name = "S.M.G."},
+	{id = "shotgun_skill", name = "Shotgun"},
+	{id = "heavy_skill", name = "Heavy MG"},
+	{id = "arifle_skill", name = "A.Rifle"},
+	{id = "revolver_skill", name = "Revolver/magnum"},
+	{id = "rifle_skill", name = "Rifle"},
+	{id = "throw_skill", name = "Throwing weapons"},
 }
 
-minetest.register_on_joinplayer(
-   function(player)
-      local meta = player:get_meta()
-      for _,skill in ipairs(skill_list) do
-	 if meta:get_int(skill.id) == 0 then
-	    meta:set_int(skill.id,100)
-	 end
-      end
-   end
-)
+minetest.register_on_joinplayer(function(player)
+	local meta = player:get_meta()
+
+	for _, skill in ipairs(skill_list) do
+		if meta:get_int(skill.id) == 0 then
+			meta:set_int(skill.id, 100)
+		end
+	end
+end)
 
 minetest.register_chatcommand("gunskills", {
-	func = function(name, param)
-	for _, player in pairs(minetest.get_connected_players()) do
-	local meta = player:get_meta()
-local handguns = meta:get_int("handgun_skill")
-local mps = meta:get_int("mp_skill") 
-local smgs = meta:get_int("smg_skill")  
-local shotguns = meta:get_int("shotgun_skill") 
-local heavy = meta:get_int("heavy_skill") 
-local arifle = meta:get_int("arifle_skill")
-local revolver = meta:get_int("revolver_skill")
-local rifle = meta:get_int("rifle_skill")
-local throw = meta:get_int("throw_skill")
-		minetest.show_formspec(name, "rangedweapons:gunskills_form",
-"size[11,7]"..
-"label[0,0;Gun efficiency: increases damage, accuracy and crit chance.]"..
-"image[0,1;1,1;rangedweapons_handgun_img.png]"..
-"label[1,1.2;Handgun efficiency: " .. handguns .. "%]"..
-"image[0,2;1,1;rangedweapons_machinepistol_img.png]"..
-"label[1,2.2;M.Pistol efficiency: " .. mps .. "%]"..
-"image[0,3;1,1;rangedweapons_smg_img.png]"..
-"label[1,3.2;S.M.G efficiency: " .. smgs .. "%]"..
-"image[0,4;1,1;rangedweapons_shotgun_img.png]"..
-"label[1,4.2;Shotgun efficiency: " .. shotguns .. "%]"..
-"image[0,5;1,1;rangedweapons_heavy_img.png]"..
-"label[1,5.2;Heavy.MG efficiency: " .. heavy .. "%]"..
-"image[0,6;1,1;rangedweapons_arifle_img.png]"..
-"label[1,6.2;A.rifle efficiency: " .. arifle .. "%]"..
-"image[5,1;1,1;rangedweapons_revolver_img.png]"..
-"label[6,1.2;Revl./mgn. efficiency: " .. revolver .. "%]"..
-"image[5,2;1,1;rangedweapons_rifle_img.png]"..
-"label[6,2.2;Rifle efficiency: " .. rifle .. "%]"..
-"image[5,3;1,1;rangedweapons_yeetable_img.png]"..
-"label[6,3.2;Throwing efficiency: " .. throw .. "%]"..
-"button_exit[9,0;2,1;exit;Done]")
+	description = S("Show your weapon skills"),
+	func = function(name)
+		local player = minetest.get_player_by_name(name)
+		if not player then
+			return false, S("This command can only be used by a connected player.")
+		end
 
-end
-	end
+		local meta = player:get_meta()
+		local rows = {
+			"size[11,7]",
+			"label[0,0;Gun efficiency: increases damage, accuracy and critical chance.]"
+		}
+		local positions = {
+			{x = 0, y = 1, image = "handgun", id = "handgun_skill", label = "Handgun"},
+			{x = 0, y = 2, image = "machinepistol", id = "mp_skill", label = "M.Pistol"},
+			{x = 0, y = 3, image = "smg", id = "smg_skill", label = "S.M.G."},
+			{x = 0, y = 4, image = "shotgun", id = "shotgun_skill", label = "Shotgun"},
+			{x = 0, y = 5, image = "heavy", id = "heavy_skill", label = "Heavy MG"},
+			{x = 0, y = 6, image = "arifle", id = "arifle_skill", label = "A.Rifle"},
+			{x = 5, y = 1, image = "revolver", id = "revolver_skill", label = "Revolver"},
+			{x = 5, y = 2, image = "rifle", id = "rifle_skill", label = "Rifle"},
+			{x = 5, y = 3, image = "yeetable", id = "throw_skill", label = "Throwing"},
+		}
+
+		for _, entry in ipairs(positions) do
+			local value = meta:get_int(entry.id)
+			rows[#rows + 1] = string.format(
+				"image[%d,%d;1,1;rangedweapons_%s_img.png]label[%d,%0.1f;%s efficiency: %d%%]",
+				entry.x, entry.y, entry.image, entry.x + 1, entry.y + 0.2,
+				entry.label, value
+			)
+		end
+
+		rows[#rows + 1] = "button_exit[9,0;2,1;exit;Done]"
+		minetest.show_formspec(name, "rangedweapons:gunskills_form", table.concat(rows))
+		return true
+	end,
 })
 
-local min_gun_efficiency = tonumber(minetest.settings:get("rangedweapons_min_gun_efficiency")) or 40
+local min_gun_efficiency = tonumber(
+	minetest.settings:get("rangedweapons_min_gun_efficiency")
+) or 40
 local timer = 0
-minetest.register_globalstep(
-   function(dtime, player)
-      timer = timer + dtime;
+local degradation_interval = 60
 
-      if timer > 60 then
-	 for _, player in pairs(minetest.get_connected_players()) do
-	    local meta = player:get_meta()
-	    for _,skill in ipairs(skill_list) do
-	       if math.random(1, 40) == 1 then
-		  if meta:get_int(skill.id) > min_gun_efficiency then
-		     meta:set_int(skill.id, meta:get_int(skill.id) - 1)
-		     minetest.chat_send_player(player:get_player_name(),
-					       minetest.colorize("#ff0000",S("@1 skill degraded!", S(skill.name))))
-		  end
-	       end
-	    end
-	    timer = 0
-	 end
-      end
+minetest.register_globalstep(function(dtime)
+	-- Use the engine API so world-level and per-player creative mode are respected.
+	if minetest.is_creative_enabled("") then
+		timer = 0
+		return
+	end
+
+	timer = timer + dtime
+	if timer < degradation_interval then
+		return
+	end
+	timer = 0
+
+	for _, player in ipairs(minetest.get_connected_players()) do
+		local meta = player:get_meta()
+		local player_name = player:get_player_name()
+
+		for _, skill in ipairs(skill_list) do
+			local value = meta:get_int(skill.id)
+			if value > min_gun_efficiency and math.random(1, 40) == 1 then
+				value = value - 1
+				meta:set_int(skill.id, value)
+				minetest.chat_send_player(
+					player_name,
+					minetest.colorize("#ff0000", S("@1 skill degraded!", S(skill.name)))
+				)
+			end
+		end
+	end
 end)
