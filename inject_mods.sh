@@ -31,7 +31,7 @@ while IFS= read -r line || [[ -n "$line" ]]; do
 	[[ "$line" =~ ^[[:space:]]*load_mod_([A-Za-z0-9_]+)[[:space:]]*=[[:space:]]*(.*)$ ]] || continue
 	name="${BASH_REMATCH[1]}"
 	value="${BASH_REMATCH[2]}"
-	value="${value#" ${value%%[![:space:]]*}"}"
+	value="${value#"${value%%[![:space:]]*}"}"
 	value="${value%"${value##*[![:space:]]}"}"
 
 	# Skip explicitly disabled mods.
